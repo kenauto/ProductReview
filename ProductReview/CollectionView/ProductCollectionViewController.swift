@@ -22,6 +22,7 @@ class ProductCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
         loadSampleProduct()
         // Do any additional setup after loading the view.
     }
@@ -45,21 +46,36 @@ class ProductCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return Products.count+1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+        switch indexPath.item{
+        case 0:
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "AddProductCollectionViewCell", for: indexPath)
+
+        default:
+            let cellIdentifier = "ProductCollectionViewCell"
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ProductCollectionViewCell else{
+                fatalError()
+            }
+            // Configure the cell
+            let product = Products[indexPath.row - 1]
+            cell.photoImageView.image = product.photo
+            cell.nameLabel.text = product.name
+            cell.priceLabel.text = product.price
+            cell.emoticonImageView.image = product.ratingEmoticon
+            cell.ratingLabel.text = "\(product.rating)"
+            cell.reviewLabel.text = "\(product.review)"
+            return cell
+        }
+        
     }
 
     // MARK: UICollectionViewDelegate
@@ -105,9 +121,9 @@ class ProductCollectionViewController: UICollectionViewController {
         
         let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180 ฿", photo: photo1, rating: 60, ratingEmoticon: emoticonLike, review: "5 รีวิว")
         let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200 ฿", photo: photo2, rating: 28, ratingEmoticon: emoticonFair, review: "9 รีวิว")
-        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, rating: 0, ratingEmoticon: emoticonSad, review: "") else {
-
+        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, rating: 0, ratingEmoticon: emoticonSad, review: "")
         Products += [product1,product2,product3]
     }
+    
     
 }
