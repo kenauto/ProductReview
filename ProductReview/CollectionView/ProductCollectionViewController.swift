@@ -22,7 +22,7 @@ class ProductCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
+
         loadSampleProduct()
         // Do any additional setup after loading the view.
     }
@@ -31,6 +31,17 @@ class ProductCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showNavigationBar()
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -77,7 +88,16 @@ class ProductCollectionViewController: UICollectionViewController {
         }
         
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath)
+            return reusableView
+        default:
+            fatalError()
+        }
+    }
     // MARK: UICollectionViewDelegate
 
     /*
