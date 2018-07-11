@@ -14,16 +14,39 @@ class Product {
     var name: String
     var price: String
     var photo: UIImage?
-    var rating: Int
+    var rating: Rating
+    var highestRating:Int
+    var ratingS: Int
+    var ratingF: Int
+    var ratingL:Int
     var ratingEmoticon: UIImage?
     var review: String
     
-    init(name:String, price:String, photo:UIImage?, rating: Int, ratingEmoticon: UIImage?, review: String){
+    init(name:String, price:String, photo:UIImage?, ratingS: Int, ratingF: Int, ratingL: Int, review: String){
         self.name = name
         self.price = price
         self.photo = photo
-        self.rating = rating
-        self.ratingEmoticon = ratingEmoticon
+        self.ratingS = ratingS
+        self.ratingF = ratingF
+        self.ratingL = ratingL
         self.review = review
+        self.rating = Rating(sad: ratingS, fair: ratingF, like: ratingL)
+        if ratingL > ratingF && ratingL > ratingS{
+            self.ratingEmoticon = #imageLiteral(resourceName: "emoticonLike")
+            highestRating = ratingL
+        }
+        else if ratingF > ratingL && ratingF > ratingS {
+            self.ratingEmoticon = #imageLiteral(resourceName: "emoticonFair")
+            highestRating = ratingF
+        }
+        else {
+            self.ratingEmoticon = #imageLiteral(resourceName: "emoticonSad")
+            highestRating = ratingS
+        }
+    }
+    public struct Rating {
+        var sad: Int
+        var fair: Int
+        var like: Int
     }
 }

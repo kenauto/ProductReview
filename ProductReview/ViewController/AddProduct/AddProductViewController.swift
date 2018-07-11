@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
+import JVFloatLabeledTextField
+import os.log
 
 class AddProductViewController: UIViewController,UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate {
 
     
     //MARK: Property
 
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var ProductImageView: UIImageView!
-    
-    
+    @IBOutlet weak var productName: SkyFloatingLabelTextField!
+    @IBOutlet weak var productPrice: SkyFloatingLabelTextField!
+    @IBOutlet weak var productDescription: SkyFloatingLabelTextField!
+    var product: Product?
     
     //MARK: Actions
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -54,7 +60,27 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
     
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIButton, button === addButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = productName.text
+        let price = "\(productPrice.text ?? "0") ฿"
+//        let description = productDescription.text
+        let photo = ProductImageView.image
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        product = Product(name: name!, price: price, photo: photo,  ratingS: 0, ratingF :0, ratingL:0, review: "0")
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -82,7 +82,7 @@ class ProductCollectionViewController: UICollectionViewController {
             cell.nameLabel.text = product.name
             cell.priceLabel.text = product.price
             cell.emoticonImageView.image = product.ratingEmoticon
-            cell.ratingLabel.text = "\(product.rating)"
+            cell.ratingLabel.text = "\(product.highestRating)"
             cell.reviewLabel.text = "\(product.review)"
             return cell
         }
@@ -128,20 +128,28 @@ class ProductCollectionViewController: UICollectionViewController {
     
     }
     */
-    
+    //MARK: Actions
+    @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddProductViewController, let product = sourceViewController.product {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: Products.count+1, section: 0)
+            
+            Products.append(product)
+            collectionView?.insertItems(at: [newIndexPath])
+        }
+    }
     
     //MARK: Private function
     private func loadSampleProduct(){
         let photo1 = UIImage(named: "product1")
         let photo2 = UIImage(named: "product2")
         let photo3 = UIImage(named: "product3")
-        let emoticonSad = UIImage(named: "emoticonSad")
-        let emoticonFair = UIImage(named: "emoticonFair")
-        let emoticonLike = UIImage(named: "emoticonLike")
+
         
-        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180 ฿", photo: photo1, rating: 60, ratingEmoticon: emoticonLike, review: "5 รีวิว")
-        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200 ฿", photo: photo2, rating: 28, ratingEmoticon: emoticonFair, review: "9 รีวิว")
-        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, rating: 0, ratingEmoticon: emoticonSad, review: "")
+        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180 ฿", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว")
+        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200 ฿", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว")
+        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "")
         Products += [product1,product2,product3]
     }
     
