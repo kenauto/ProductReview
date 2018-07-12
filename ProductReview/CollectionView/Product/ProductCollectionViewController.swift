@@ -94,6 +94,9 @@ class ProductCollectionViewController: UICollectionViewController {
         case UICollectionElementKindSectionHeader:
             let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath)
             return reusableView
+        case UICollectionElementKindSectionFooter:
+            let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView", for: indexPath)
+            return reusableView
         default:
             fatalError()
         }

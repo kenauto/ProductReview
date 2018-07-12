@@ -168,7 +168,7 @@
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NfG-js-Rd2">
                             <size key="itemSize" width="163" height="202"/>
                             <size key="headerReferenceSize" width="0.0" height="101"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="10"/>
                             <inset key="sectionInset" minX="16" minY="19" maxX="16" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -350,6 +350,10 @@
                                 <constraint firstItem="F2c-Fz-CbC" firstAttribute="top" secondItem="1X6-gO-mxm" secondAttribute="top" id="Z9K-nX-H3s"/>
                             </constraints>
                         </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="footerView" id="Kmu-n2-pQB">
+                            <rect key="frame" x="0.0" y="322" width="375" height="10"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="LGD-EZ-7pc" id="kso-Rj-a0u"/>
                             <outlet property="delegate" destination="LGD-EZ-7pc" id="vwb-4t-PT5"/>
@@ -389,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sd9-tK-JVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="626"/>
+            <point key="canvasLocation" x="2332" y="625.63718140929541"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9TA-KM-gck">
