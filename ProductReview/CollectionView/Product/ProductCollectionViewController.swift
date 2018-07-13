@@ -109,7 +109,7 @@ class ProductCollectionViewController: UICollectionViewController {
             let product = Products[indexPath.row - 1]
             cell.photoImageView.image = product.photo
             cell.nameLabel.text = product.name
-            cell.priceLabel.text = product.price
+            cell.priceLabel.text = "\(product.price) ฿"
             cell.emoticonImageView.image = product.ratingEmoticon
             cell.ratingLabel.text = "\(product.highestRating)"
             cell.reviewLabel.text = "\(product.review)"
@@ -166,11 +166,20 @@ class ProductCollectionViewController: UICollectionViewController {
     @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AddProductViewController, let product = sourceViewController.product {
             
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: Products.count+1, section: 0)
-            
-            Products.append(product)
-            collectionView?.insertItems(at: [newIndexPath])
+            if let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first{
+            if selectedIndexPath.item != 0{
+                // Update an existing meal.
+                Products[selectedIndexPath.item-1] = product
+                collectionView?.reloadItems(at: [selectedIndexPath])
+            }
+            else {
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: Products.count+1, section: 0)
+                
+                Products.append(product)
+                collectionView?.insertItems(at: [newIndexPath])
+            }
+            }
         }
     }
     
@@ -184,9 +193,9 @@ class ProductCollectionViewController: UICollectionViewController {
                             """
 
         
-        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180 ฿", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว", description: description1)
-        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200 ฿", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว", description: description1)
-        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "", description: description1)
+        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว", description: description1)
+        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว", description: description1)
+        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "", description: description1)
         Products += [product1,product2,product3]
     }
     

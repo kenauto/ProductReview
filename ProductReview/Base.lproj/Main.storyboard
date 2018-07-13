@@ -155,7 +155,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3744.8000000000002" y="31.934032983508249"/>
+            <point key="canvasLocation" x="4684" y="31.934032983508249"/>
         </scene>
         <!--Product Collection View Controller-->
         <scene sceneID="ltb-2n-zOj">
@@ -318,7 +318,7 @@
                                     <outlet property="ratingLabel" destination="8mf-hy-ivR" id="yyA-s7-5zx"/>
                                     <outlet property="reviewImageView" destination="nR9-Ne-MW5" id="10L-qi-dz3"/>
                                     <outlet property="reviewLabel" destination="yzT-a4-ri3" id="BAA-9T-0Y2"/>
-                                    <segue destination="ORf-Qm-FBO" kind="show" identifier="showDetail" id="p1J-NR-QYl"/>
+                                    <segue destination="ORf-Qm-FBO" kind="show" identifier="showDetail" id="w3j-Me-U5g"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -372,7 +372,7 @@
             </objects>
             <point key="canvasLocation" x="927.20000000000005" y="31.934032983508249"/>
         </scene>
-        <!--Product Detail View Controller-->
+        <!--สินค้า-->
         <scene sceneID="IhA-Ye-lpE">
             <objects>
                 <viewController id="ORf-Qm-FBO" customClass="ProductDetailViewController" customModule="ProductReview" customModuleProvider="target" sceneMemberID="viewController">
@@ -560,6 +560,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VOy-7o-ULB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="สินค้า" id="ZMc-DY-oy8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Hgz-YN-wlt">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancel:" destination="ORf-Qm-FBO" id="sLd-P5-XeA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="แก้ไข" id="rHR-xk-nah">
+                            <color key="tintColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="editProduct" id="2hv-7Z-7iA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1128"/>
                     <connections>
                         <outlet property="descriptionHeadLabel" destination="91g-Z7-ZFe" id="uOb-ic-reJ"/>
@@ -574,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cq2-iG-rRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2317.5999999999999" y="679.16041979010504"/>
+            <point key="canvasLocation" x="2727" y="748"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9TA-KM-gck">
@@ -607,4 +621,7 @@
         <image name="picture" width="48" height="36"/>
         <image name="review" width="14" height="13"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2hv-7Z-7iA"/>
+    </inferredMetricsTieBreakers>
 </document>

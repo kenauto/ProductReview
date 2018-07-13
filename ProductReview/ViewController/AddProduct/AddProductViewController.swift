@@ -22,6 +22,9 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     @IBOutlet weak var productPrice: SkyFloatingLabelTextField!
     @IBOutlet weak var productDescription: SkyFloatingLabelTextField!
     var product: Product?
+    var ratingS = 0
+    var ratingF = 0
+    var ratingL = 0
     
     //MARK: Actions
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -72,13 +75,13 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         }
         
         let name = productName.text
-        let price = "\(productPrice.text ?? "0") ฿"
+        let price = "\(productPrice.text ?? "0")"
 //        let description = productDescription.text
         let photo = ProductImageView.image
         let description = productDescription.text
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        product = Product(name: name!, price: price, photo: photo,  ratingS: 0, ratingF :0, ratingL:0, review: "0", description: description!)
+        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, review: "0", description: description!)
     }
     
     
@@ -86,6 +89,16 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let product = product{
+            ProductImageView.image = product.photo
+            productName.text = product.name
+            productPrice.text = product.price
+            productDescription.text = product.description
+            ratingL = product.rating.like
+            ratingF = product.rating.fair
+            ratingS = product.rating.sad
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

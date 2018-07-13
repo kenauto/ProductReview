@@ -25,7 +25,7 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
         if let product = product{
             productImageView.image = product.photo
             productNameLabel.text = product.name
-            productPriceLabel.text = product.price
+            productPriceLabel.text = "\(product.price) ฿"
             productDescriptionTextView.text = product.description
             descriptionHeadLabel.text = "รายละเอียดสินค้า"
             productLikeRating.text = "\(product.rating.like)"
@@ -44,14 +44,25 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
         self.navigationController?.popViewController(animated: true)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        switch(segue.identifier ?? "") {
+            
+        case "editProduct":
+            guard let EditProductViewController = segue.destination as? AddProductViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            EditProductViewController.product = product
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
-    */
+    
 
 }
