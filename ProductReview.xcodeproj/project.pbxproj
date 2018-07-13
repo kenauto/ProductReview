@@ -134,6 +134,7 @@
 		F40CB04320F364FE00D81869 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F4DF244F20F073D2009C188B /* CollectionView */,
 				F40CB04620F3652C00D81869 /* ProductDetail */,
 				F40CB04420F3650B00D81869 /* AddProduct */,
 			);
@@ -192,7 +193,6 @@
 				F4E2CFF920EF56D500F3068B /* AppDelegate.swift */,
 				F4DF244B20F05A7F009C188B /* Extensions.swift */,
 				F40CB04320F364FE00D81869 /* ViewController */,
-				F4DF244F20F073D2009C188B /* CollectionView */,
 				F407043320EF784F00063CD7 /* Product.swift */,
 				F4E2CFFD20EF56D500F3068B /* Main.storyboard */,
 				F4E2D00020EF56D700F3068B /* Assets.xcassets */,
