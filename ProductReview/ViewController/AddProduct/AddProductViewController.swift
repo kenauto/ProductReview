@@ -75,9 +75,10 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         let price = "\(productPrice.text ?? "0") ฿"
 //        let description = productDescription.text
         let photo = ProductImageView.image
+        let description = productDescription.text
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        product = Product(name: name!, price: price, photo: photo,  ratingS: 0, ratingF :0, ratingL:0, review: "0")
+        product = Product(name: name!, price: price, photo: photo,  ratingS: 0, ratingF :0, ratingL:0, review: "0", description: description!)
     }
     
     

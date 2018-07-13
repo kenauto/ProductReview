@@ -43,15 +43,44 @@ class ProductCollectionViewController: UICollectionViewController {
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        switch(segue.identifier ?? "") {
+
+        case "AddItem":
+            return
+
+        case "showDetail":
+            guard let ProductDetailViewController = segue.destination as? ProductDetailViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+
+            guard let selectedProductCell = sender as? ProductCollectionViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+
+            guard let indexPath = collectionView?.indexPath(for: selectedProductCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+
+            let selectedProduct = Products[indexPath.item-1]
+            ProductDetailViewController.product = selectedProduct
+
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+//        if segue.identifier == "showDetail" {
+//            let productDetailViewController = segue.destination
+//            let selectedProductCell = sender
+//            let indexPath = Products[in]
+//        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -101,6 +130,8 @@ class ProductCollectionViewController: UICollectionViewController {
             fatalError()
         }
     }
+    
+
     // MARK: UICollectionViewDelegate
 
     /*
@@ -148,11 +179,14 @@ class ProductCollectionViewController: UICollectionViewController {
         let photo1 = UIImage(named: "product1")
         let photo2 = UIImage(named: "product2")
         let photo3 = UIImage(named: "product3")
+        let description1 = """
+                            กาแฟอาราบิก้าคั่วกลาง แบบเมล็ด ขนาด 250 กรัม รสชาติกลมกล่อม กลิ่นหอม ยังคงความเป็นผลไม้และความสดชื่น เงื่อนไขการสั่งสินค้า/ คำแนะนำ สินค้าซื้อแล้วไม่สามารถปรับ เปลี่ยน หรือคืนได้ ยกเว้น สินค้าชำรุด/เสียหาย ไม่เป็นไปตามรูปที่แสดงเท่านั้น จัดจำหน่ายและจัดส่งโดย Abonzo Coffee. สอบถามข้อมูลเพิ่มเติมเกี่ยวกันสินค้า ติดต่อ คุณภัทรชัย 091-070-7272
+                            """
 
         
-        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180 ฿", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว")
-        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200 ฿", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว")
-        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "")
+        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180 ฿", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว", description: description1)
+        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200 ฿", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว", description: description1)
+        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200 ฿", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "", description: description1)
         Products += [product1,product2,product3]
     }
     

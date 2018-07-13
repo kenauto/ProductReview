@@ -9,10 +9,29 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController, UINavigationControllerDelegate {
+    var product: Product?
 
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var productPriceLabel: UILabel!
+    @IBOutlet weak var descriptionHeadLabel: UILabel!
+    @IBOutlet weak var productDescriptionTextView: UITextView!
+    @IBOutlet weak var productLikeRating: UILabel!
+    @IBOutlet weak var productFairRating: UILabel!
+    @IBOutlet weak var productBadRating: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let product = product{
+            productImageView.image = product.photo
+            productNameLabel.text = product.name
+            productPriceLabel.text = product.price
+            productDescriptionTextView.text = product.description
+            descriptionHeadLabel.text = "รายละเอียดสินค้า"
+            productLikeRating.text = "\(product.rating.like)"
+            productFairRating.text = "\(product.rating.fair)"
+            productBadRating.text = "\(product.rating.sad)"
+        }
         // Do any additional setup after loading the view.
     }
 
