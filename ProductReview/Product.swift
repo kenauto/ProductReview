@@ -22,8 +22,9 @@ class Product {
     var ratingEmoticon: UIImage?
     var review: String
     var description: String
+    var ratings: [RatingData]?
     
-    init(name:String, price:String, photo:UIImage?, ratingS: Int, ratingF: Int, ratingL: Int, review: String, description: String){
+    init(name:String, price:String, photo:UIImage?, ratingS: Int, ratingF: Int, ratingL: Int, review: String, description: String,ratings: [RatingData]?){
         self.name = name
         self.price = price
         self.photo = photo
@@ -33,6 +34,7 @@ class Product {
         self.review = review
         self.rating = Rating(sad: ratingS, fair: ratingF, like: ratingL)
         self.description = description
+        self.ratings = ratings
         if ratingL > ratingF && ratingL > ratingS{
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonLike")
             highestRating = ratingL

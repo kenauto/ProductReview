@@ -63,6 +63,40 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
     }
+}
+extension ProductDetailViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (product?.ratings?.count)! > 1 ? 2: (product?.ratings?.count)!
+    }
     
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellIdentifier = "RatingCollectionViewCell"
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? RatingCollectionViewCell else{
+            fatalError()
+        }
+        // Configure the cell
+        let review = product?.ratings![(product?.ratings?.count)! - (indexPath.item+1)]
+        switch review?.rating{
+        case .Fair?:
+            cell.RatingPicture.image = #imageLiteral(resourceName: "emoticonFair")
+        case .Like?:
+            cell.RatingPicture.image = #imageLiteral(resourceName: "emoticonLike")
+        default:
+            cell.RatingPicture.image = #imageLiteral(resourceName: "emoticonSad")
+            
+        }
+        cell.RatingName.text = review?.name
+        cell.RatingDate.text = review?.date
+        cell.RatingDescription.text = review?.description
+        cell.layer.borderWidth = 0.7
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowOpacity = 0.7
+        cell.layer.shadowRadius = 4
+        cell.layer.shadowColor = UIColor.darkGray.cgColor
+        cell.layer.masksToBounds = false
+        return cell
+    }
+    
+    
 }

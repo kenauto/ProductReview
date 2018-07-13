@@ -12,10 +12,10 @@ import JVFloatLabeledTextField
 import os.log
 
 class AddProductViewController: UIViewController,UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate {
-
+    
     
     //MARK: Property
-
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var ProductImageView: UIImageView!
     @IBOutlet weak var productName: SkyFloatingLabelTextField!
@@ -33,7 +33,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     
     @IBAction func selectPhotoFromLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
-//        nameTextField.resignFirstResponder()
+        //        nameTextField.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
@@ -76,12 +76,12 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         
         let name = productName.text
         let price = "\(productPrice.text ?? "0")"
-//        let description = productDescription.text
+        //        let description = productDescription.text
         let photo = ProductImageView.image
         let description = productDescription.text
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, review: "0", description: description!)
+        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, review: "0", description: description!, ratings: nil)
     }
     
     
@@ -100,12 +100,12 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

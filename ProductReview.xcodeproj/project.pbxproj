@@ -16,6 +16,8 @@
 		F40CB03E20F344B100D81869 /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40CB03D20F344B100D81869 /* Gotham-Bold.ttf */; };
 		F40CB04020F3474F00D81869 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40CB03F20F3474E00D81869 /* Gotham-Medium.otf */; };
 		F40CB04820F36B1E00D81869 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CB04720F36B1E00D81869 /* ProductDetailViewController.swift */; };
+		F451472820F8AA4C001D11BE /* RatingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F451472720F8AA4C001D11BE /* RatingData.swift */; };
+		F451472D20F8B231001D11BE /* RatingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F451472C20F8B231001D11BE /* RatingCollectionViewCell.swift */; };
 		F4DF244C20F05A7F009C188B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DF244B20F05A7F009C188B /* Extensions.swift */; };
 		F4DF244E20F069AA009C188B /* AddProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DF244D20F069AA009C188B /* AddProductCollectionViewCell.swift */; };
 		F4E2CFFA20EF56D500F3068B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2CFF920EF56D500F3068B /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 		F40CB03D20F344B100D81869 /* Gotham-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.ttf"; sourceTree = "<group>"; };
 		F40CB03F20F3474E00D81869 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		F40CB04720F36B1E00D81869 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		F451472720F8AA4C001D11BE /* RatingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingData.swift; sourceTree = "<group>"; };
+		F451472C20F8B231001D11BE /* RatingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingCollectionViewCell.swift; path = /Users/pisit.lol/Desktop/ProductReview/ProductReview/ViewController/CollectionView/Rating/RatingCollectionViewCell.swift; sourceTree = "<absolute>"; };
 		F4DF244B20F05A7F009C188B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F4DF244D20F069AA009C188B /* AddProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4E2CFF620EF56D500F3068B /* ProductReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,9 +161,18 @@
 			path = ProductDetail;
 			sourceTree = "<group>";
 		};
+		F451472920F8B1F1001D11BE /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				F451472C20F8B231001D11BE /* RatingCollectionViewCell.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		F4DF244F20F073D2009C188B /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				F451472920F8B1F1001D11BE /* Rating */,
 				F40CB04120F364BB00D81869 /* Product */,
 				F40CB04220F364D800D81869 /* AddProduct */,
 			);
@@ -194,6 +207,7 @@
 				F4DF244B20F05A7F009C188B /* Extensions.swift */,
 				F40CB04320F364FE00D81869 /* ViewController */,
 				F407043320EF784F00063CD7 /* Product.swift */,
+				F451472720F8AA4C001D11BE /* RatingData.swift */,
 				F4E2CFFD20EF56D500F3068B /* Main.storyboard */,
 				F4E2D00020EF56D700F3068B /* Assets.xcassets */,
 				F4E2D00220EF56D700F3068B /* LaunchScreen.storyboard */,
@@ -383,6 +397,8 @@
 				F4DF244E20F069AA009C188B /* AddProductCollectionViewCell.swift in Sources */,
 				F4DF244C20F05A7F009C188B /* Extensions.swift in Sources */,
 				F40CB04820F36B1E00D81869 /* ProductDetailViewController.swift in Sources */,
+				F451472820F8AA4C001D11BE /* RatingData.swift in Sources */,
+				F451472D20F8B231001D11BE /* RatingCollectionViewCell.swift in Sources */,
 				F407043620EF7CA500063CD7 /* ProductCollectionViewCell.swift in Sources */,
 				F407043420EF784F00063CD7 /* Product.swift in Sources */,
 			);

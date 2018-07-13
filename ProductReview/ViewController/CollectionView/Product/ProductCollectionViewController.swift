@@ -191,11 +191,14 @@ class ProductCollectionViewController: UICollectionViewController {
         let description1 = """
                             กาแฟอาราบิก้าคั่วกลาง แบบเมล็ด ขนาด 250 กรัม รสชาติกลมกล่อม กลิ่นหอม ยังคงความเป็นผลไม้และความสดชื่น เงื่อนไขการสั่งสินค้า/ คำแนะนำ สินค้าซื้อแล้วไม่สามารถปรับ เปลี่ยน หรือคืนได้ ยกเว้น สินค้าชำรุด/เสียหาย ไม่เป็นไปตามรูปที่แสดงเท่านั้น จัดจำหน่ายและจัดส่งโดย Abonzo Coffee. สอบถามข้อมูลเพิ่มเติมเกี่ยวกันสินค้า ติดต่อ คุณภัทรชัย 091-070-7272
                             """
-
+        let ratingData1:RatingData = RatingData.init(name: "kenny", rating: RatingData.ratingStatus.Like, date: "now", description: "good")
+        let ratingData2:RatingData = RatingData.init(name: "kenny", rating: RatingData.ratingStatus.Like, date: "now", description: "good")
+        let ratingData3:RatingData = RatingData.init(name: "kenny", rating: RatingData.ratingStatus.Like, date: "now", description: "good")
+        let ratingDatas: [RatingData] = [ratingData1,ratingData2,ratingData3]
         
-        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว", description: description1)
-        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว", description: description1)
-        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "", description: description1)
+        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว", description: description1,ratings: ratingDatas)
+        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว", description: description1,ratings: ratingDatas)
+        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "", description: description1,ratings: ratingDatas)
         Products += [product1,product2,product3]
     }
     
