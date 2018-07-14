@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RatingData {
+class ReviewData {
     var rating: ratingStatus
     var name: String
     var date: String

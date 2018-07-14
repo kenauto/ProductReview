@@ -59,6 +59,11 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
             }
             EditProductViewController.product = product
             
+        case "viewReview":
+            guard let viewReviewViewController = segue.destination as? ReviewCollectionViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            viewReviewViewController.product = product
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
@@ -66,7 +71,7 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
 }
 extension ProductDetailViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (product?.ratings?.count)! > 1 ? 2: (product?.ratings?.count)!
+        return (product?.reviews?.count)! > 1 ? 2: (product?.reviews?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -75,7 +80,7 @@ extension ProductDetailViewController: UICollectionViewDataSource{
             fatalError()
         }
         // Configure the cell
-        let review = product?.ratings![(product?.ratings?.count)! - (indexPath.item+1)]
+        let review = product?.reviews![(product?.reviews?.count)! - (indexPath.item+1)]
         switch review?.rating{
         case .Fair?:
             cell.RatingPicture.image = #imageLiteral(resourceName: "emoticonFair")

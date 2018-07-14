@@ -22,9 +22,9 @@ class Product {
     var ratingEmoticon: UIImage?
     var review: String
     var description: String
-    var ratings: [RatingData]?
+    var reviews: [ReviewData]?
     
-    init(name:String, price:String, photo:UIImage?, ratingS: Int, ratingF: Int, ratingL: Int, review: String, description: String,ratings: [RatingData]?){
+    init(name:String, price:String, photo:UIImage?, ratingS: Int, ratingF: Int, ratingL: Int, review: String, description: String,ratings: [ReviewData]?){
         self.name = name
         self.price = price
         self.photo = photo
@@ -34,7 +34,7 @@ class Product {
         self.review = review
         self.rating = Rating(sad: ratingS, fair: ratingF, like: ratingL)
         self.description = description
-        self.ratings = ratings
+        self.reviews = ratings
         if ratingL > ratingF && ratingL > ratingS{
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonLike")
             highestRating = ratingL
@@ -47,6 +47,9 @@ class Product {
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonSad")
             highestRating = ratingS
         }
+    }
+    func addReview(review: ReviewData){
+        reviews?.append(review)
     }
     public struct Rating {
         var sad: Int
