@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/pisit.lol/Desktop/ProductReview/ProductReview/ViewController/CollectionView/Rating/RatingCollectionViewCell.swift">
-   </FileRef>
-   <FileRef
       location = "group:ProductReview.xcodeproj">
    </FileRef>
    <FileRef
