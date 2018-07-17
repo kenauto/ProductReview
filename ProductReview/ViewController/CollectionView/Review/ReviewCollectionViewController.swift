@@ -10,9 +10,12 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class ReviewCollectionViewController: UICollectionViewController {
+class ReviewCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
 
     var product: Product?
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +24,8 @@ class ReviewCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -50,67 +54,86 @@ class ReviewCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return (product?.reviews?.count)!
+        return ((product?.reviews?.count)!+1)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellIdentifier = "ReviewCollectionViewCell"
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ReviewCollectionViewCell else{
+        switch indexPath.item {
+        case 0:
+            let cellIdentifier = "AddReviewCollectionViewCell"
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? AddReviewCollectionViewCell else{
+                fatalError()
+            }
+            cell.layer.borderWidth = 0.7
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+            cell.layer.shadowOpacity = 0.7
+            cell.layer.shadowRadius = 4
+            cell.layer.shadowColor = UIColor.darkGray.cgColor
+            cell.layer.masksToBounds = false
+            
+            return cell
+        default:
+            let cellIdentifier = "ReviewCollectionViewCell"
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ReviewCollectionViewCell else{
+                fatalError()
+            }
+            // Configure the cell
+            let review = product?.reviews![indexPath.item-1]
+            switch review?.rating{
+            case .Fair?:
+                cell.reviewPicture.image = #imageLiteral(resourceName: "emoticonFair")
+            case .Like?:
+                cell.reviewPicture.image = #imageLiteral(resourceName: "emoticonLike")
+            default:
+                cell.reviewPicture.image = #imageLiteral(resourceName: "emoticonSad")
+                
+            }
+            cell.reviewName.text = review?.name
+            cell.reviewDate.text = review?.date
+            cell.reviewDescription.text = review?.description
+            cell.layer.borderWidth = 0.7
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+            cell.layer.shadowOpacity = 0.7
+            cell.layer.shadowRadius = 4
+            cell.layer.shadowColor = UIColor.darkGray.cgColor
+            cell.layer.masksToBounds = false
+            
+            return cell
+        }
+        
+    }
+
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? ReviewCollectionReusableView else {
+                fatalError()
+            }
+            if let product = product {
+                reusableView.productLikeRating.text = "\(product.ratingL)"
+                reusableView.productFairRating.text = "\(product.ratingF)"
+                reusableView.productSadRating.text = "\(product.ratingS)"
+            }
+                
+            
+            return reusableView
+        case UICollectionElementKindSectionFooter:
+            let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView", for: indexPath)
+            return reusableView
+        default:
             fatalError()
         }
-        // Configure the cell
-        let review = product?.reviews![indexPath.item]
-        switch review?.rating{
-        case .Fair?:
-            cell.reviewPicture.image = #imageLiteral(resourceName: "emoticonFair")
-        case .Like?:
-            cell.reviewPicture.image = #imageLiteral(resourceName: "emoticonLike")
-        default:
-            cell.reviewPicture.image = #imageLiteral(resourceName: "emoticonSad")
-            
-        }
-        cell.reviewName.text = review?.name
-        cell.reviewDate.text = review?.date
-        cell.reviewDescription.text = review?.description
-        cell.layer.borderWidth = 0.7
-        cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
-        cell.layer.shadowOpacity = 0.7
-        cell.layer.shadowRadius = 4
-        cell.layer.shadowColor = UIColor.darkGray.cgColor
-        cell.layer.masksToBounds = false
-        return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.item {
+        case 0:
+            return CGSize(width: 343, height: 88)
+        default:
+            return CGSize(width: 343, height: 129)
+        }
     }
-    */
-
 }
