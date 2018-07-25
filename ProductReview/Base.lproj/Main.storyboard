@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,18 +35,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-MJ-tyA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-MJ-tyA">
                                 <rect key="frame" x="0.0" y="71" width="375" height="265"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59215686274509804" green="0.61568627450980395" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QZB-MJ-tyA" secondAttribute="height" multiplier="75:53" id="NZI-rF-E1s"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="82N-zZ-g9n">
-                                <rect key="frame" x="163" y="164" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="82N-zZ-g9n">
+                                <rect key="frame" x="163" y="164" width="48" height="36"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ใส่รูปสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-Wv-T6u">
-                                <rect key="frame" x="151" y="220" width="73" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ใส่รูปสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-Wv-T6u">
+                                <rect key="frame" x="152" y="220" width="71.5" height="27"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,23 +59,20 @@
                                     <outletCollection property="gestureRecognizers" destination="kLA-oe-N9C" appends="YES" id="J94-zF-eN9"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-V0-MUb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-V0-MUb">
                                 <rect key="frame" x="63" y="601" width="250" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="addButton" image="addButton"/>
                                 <connections>
                                     <segue destination="4zc-xd-EWN" kind="unwind" unwindAction="unwindToProductListWithSender:" id="CXi-Bc-jYT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTL-fY-kuF">
-                                <rect key="frame" x="32" y="610" width="311" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTL-fY-kuF">
+                                <rect key="frame" x="32" y="610" width="311" height="32"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-e0-apn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="380" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-e0-apn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="16" y="380" width="343" height="49.5"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -88,16 +86,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ชื่อสินค้า"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHv-ea-nEo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHv-ea-nEo">
                                 <rect key="frame" x="16" y="357" width="343" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Light" family="Sukhumvit Set" pointSize="14"/>
                                 <color key="textColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USB-Io-MAl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="442" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USB-Io-MAl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="16" y="442" width="343" height="51"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -106,14 +102,13 @@
                                         <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รายละเอียดสินค้า"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-Ir-8Ar" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="506" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-Ir-8Ar" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="16" y="506" width="343" height="51"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -129,6 +124,34 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pjj-e0-apn" firstAttribute="top" secondItem="fHv-ea-nEo" secondAttribute="bottom" constant="1" id="3qs-WO-KCa"/>
+                            <constraint firstItem="82N-zZ-g9n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7AA-2K-lNh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="USB-Io-MAl" secondAttribute="trailing" constant="16" id="A4L-d8-EnG"/>
+                            <constraint firstItem="fHv-ea-nEo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fqx-ly-RWS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fHv-ea-nEo" secondAttribute="trailing" constant="16" id="Gds-pO-U1e"/>
+                            <constraint firstItem="QZB-MJ-tyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KaW-Rf-mPl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YVQ-Ir-8Ar" secondAttribute="trailing" constant="16" id="MZc-8n-bki"/>
+                            <constraint firstItem="KZm-V0-MUb" firstAttribute="top" secondItem="YVQ-Ir-8Ar" secondAttribute="bottom" constant="44" id="UoZ-Nl-hhY"/>
+                            <constraint firstItem="fTL-fY-kuF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Xev-vF-0el"/>
+                            <constraint firstItem="KZm-V0-MUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="Y78-7J-Hu6"/>
+                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZFe-NC-9Gi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjj-e0-apn" secondAttribute="trailing" constant="16" id="b20-Am-loC"/>
+                            <constraint firstItem="fTL-fY-kuF" firstAttribute="top" secondItem="YVQ-Ir-8Ar" secondAttribute="bottom" constant="53" id="cYa-PT-NnE"/>
+                            <constraint firstItem="QZB-MJ-tyA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="cg2-qe-jfz"/>
+                            <constraint firstItem="pjj-e0-apn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d1a-1W-GNx"/>
+                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="top" secondItem="USB-Io-MAl" secondAttribute="bottom" constant="13" id="epo-yY-o9P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZm-V0-MUb" secondAttribute="trailing" constant="62" id="fFD-hW-LJy"/>
+                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="top" secondItem="82N-zZ-g9n" secondAttribute="bottom" constant="20" id="fQY-iP-dzd"/>
+                            <constraint firstItem="82N-zZ-g9n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gNP-XQ-IhR"/>
+                            <constraint firstItem="QZB-MJ-tyA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gZT-pY-fLd"/>
+                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="top" secondItem="82N-zZ-g9n" secondAttribute="bottom" constant="20" id="hvt-Bn-Cpe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fTL-fY-kuF" secondAttribute="trailing" constant="32" id="i5C-xQ-5fS"/>
+                            <constraint firstItem="USB-Io-MAl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lyg-JE-xRZ"/>
+                            <constraint firstItem="fHv-ea-nEo" firstAttribute="top" secondItem="QZB-MJ-tyA" secondAttribute="bottom" constant="21" id="nBm-TO-ccl"/>
+                            <constraint firstItem="USB-Io-MAl" firstAttribute="top" secondItem="pjj-e0-apn" secondAttribute="bottom" constant="12.5" id="qdr-g6-oTF"/>
+                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qlP-eW-kn8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="เพิ่มสินค้า" id="Dnh-wt-Qpf">
@@ -319,7 +342,12 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="รีวิวสินค้า" id="xMm-KG-Olb">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Uf2-oJ-u0f"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Uf2-oJ-u0f">
+                            <color key="tintColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="back:" destination="cAu-Dt-aXh" id="COU-CT-LMO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcw-eJ-NUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -517,9 +545,8 @@
                                         <constraint firstAttribute="height" constant="71" id="itF-yy-IDb"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABONZO Coffee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1M-pM-Fhg">
-                                    <rect key="frame" x="117" y="26" width="150" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABONZO Coffee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1M-pM-Fhg">
+                                    <rect key="frame" x="112.5" y="26" width="150" height="18"/>
                                     <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="18"/>
                                     <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -535,8 +562,10 @@
                             <constraints>
                                 <constraint firstItem="F2c-Fz-CbC" firstAttribute="leading" secondItem="1X6-gO-mxm" secondAttribute="leading" id="4SH-7O-msm"/>
                                 <constraint firstAttribute="bottom" secondItem="M5v-t1-pET" secondAttribute="bottom" constant="-9" id="HDZ-ad-tIy"/>
+                                <constraint firstItem="a1M-pM-Fhg" firstAttribute="top" secondItem="1X6-gO-mxm" secondAttribute="topMargin" constant="18" id="Plp-GO-V25"/>
                                 <constraint firstItem="F2c-Fz-CbC" firstAttribute="top" secondItem="1X6-gO-mxm" secondAttribute="top" id="Z9K-nX-H3s"/>
                                 <constraint firstItem="M5v-t1-pET" firstAttribute="top" secondItem="1X6-gO-mxm" secondAttribute="top" constant="23" id="crp-4f-ASc"/>
+                                <constraint firstItem="a1M-pM-Fhg" firstAttribute="centerX" secondItem="1X6-gO-mxm" secondAttribute="centerX" id="gfx-i3-7qG"/>
                                 <constraint firstAttribute="trailing" secondItem="F2c-Fz-CbC" secondAttribute="trailing" id="kE2-sc-aii"/>
                                 <constraint firstAttribute="trailing" secondItem="M5v-t1-pET" secondAttribute="trailing" constant="22" id="ubP-BI-IR0"/>
                             </constraints>
@@ -573,6 +602,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSt-Qb-YoO">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kSt-Qb-YoO" secondAttribute="height" multiplier="75:53" id="jlx-UD-TXC"/>
                                                     <constraint firstAttribute="height" constant="265" id="kbf-sR-lBM"/>
                                                     <constraint firstAttribute="width" constant="375" id="uyb-xE-wuU"/>
                                                 </constraints>
@@ -683,16 +713,14 @@
                                                     <constraint firstAttribute="width" constant="375" id="exn-mX-ZT2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="รีวิวสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-Kp-YtI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รีวิวสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-Kp-YtI">
                                                 <rect key="frame" x="28" y="719" width="66" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="17"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-Gv-nc1">
-                                                <rect key="frame" x="284" y="721" width="67" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-Gv-nc1">
+                                                <rect key="frame" x="284" y="721" width="67" height="36"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="15"/>
                                                 <state key="normal" title="ดูทั้งหมด &gt;">
                                                     <color key="titleColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -701,9 +729,8 @@
                                                     <segue destination="cAu-Dt-aXh" kind="show" identifier="viewReview" id="uih-Nh-dVz"/>
                                                 </connections>
                                             </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ykb-8b-uwH">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ykb-8b-uwH">
                                                 <rect key="frame" x="0.0" y="750" width="375" height="314"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="10" id="iJb-sF-9eh">
                                                     <size key="itemSize" width="343" height="129"/>
@@ -765,33 +792,45 @@
                                                     <outlet property="delegate" destination="ORf-Qm-FBO" id="p5H-GM-RtY"/>
                                                 </connections>
                                             </collectionView>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GxE-w9-iHS">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxE-w9-iHS">
                                                 <rect key="frame" x="16" y="717" width="4" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="4" id="ADT-rF-aqs"/>
+                                                    <constraint firstAttribute="height" constant="24" id="CVJ-5o-b6T"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="JwX-fV-TnY" firstAttribute="trailing" secondItem="Fw0-PH-zq1" secondAttribute="trailing" id="1Zu-1d-gwV"/>
+                                            <constraint firstItem="Clb-Gv-nc1" firstAttribute="top" secondItem="JwX-fV-TnY" secondAttribute="bottom" constant="20" id="1gL-K8-TXD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Clb-Gv-nc1" secondAttribute="trailing" constant="24" id="3UB-Jd-ty9"/>
                                             <constraint firstItem="Bbv-Q6-x6w" firstAttribute="top" secondItem="kSt-Qb-YoO" secondAttribute="bottom" constant="18" id="426-UI-8TK"/>
+                                            <constraint firstAttribute="bottom" secondItem="ykb-8b-uwH" secondAttribute="bottom" id="6Aa-wd-yUw"/>
                                             <constraint firstItem="QQ0-hX-TQS" firstAttribute="leading" secondItem="05r-WH-3ki" secondAttribute="trailing" constant="12" id="6Mu-gL-bOk"/>
                                             <constraint firstItem="mcc-F7-fHq" firstAttribute="leading" secondItem="4p8-lI-f9M" secondAttribute="trailing" constant="12" id="6uW-gv-yZE"/>
                                             <constraint firstItem="91g-Z7-ZFe" firstAttribute="top" secondItem="FkQ-5c-EF0" secondAttribute="bottom" constant="9" id="7Lb-32-870"/>
                                             <constraint firstItem="IYk-y3-wy8" firstAttribute="top" secondItem="QQ0-hX-TQS" secondAttribute="top" id="8a1-3X-pM1"/>
                                             <constraint firstAttribute="trailing" secondItem="kSt-Qb-YoO" secondAttribute="trailing" id="8ot-se-PrY"/>
+                                            <constraint firstItem="ykb-8b-uwH" firstAttribute="top" secondItem="eWc-Kp-YtI" secondAttribute="bottom" constant="4" id="98L-iv-bLB"/>
                                             <constraint firstItem="Fw0-PH-zq1" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" id="AkB-xC-hkd"/>
                                             <constraint firstItem="IYk-y3-wy8" firstAttribute="top" secondItem="4p8-lI-f9M" secondAttribute="top" id="Czm-vH-fIf"/>
                                             <constraint firstItem="hux-XO-mI6" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" constant="16" id="D22-nk-PUh"/>
+                                            <constraint firstAttribute="trailing" secondItem="kSt-Qb-YoO" secondAttribute="trailing" id="Dmw-D5-sA6"/>
                                             <constraint firstItem="IYk-y3-wy8" firstAttribute="bottom" secondItem="05r-WH-3ki" secondAttribute="bottom" id="IxJ-Yf-ddG"/>
+                                            <constraint firstItem="GxE-w9-iHS" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" constant="16" id="L7y-YB-qzM"/>
                                             <constraint firstAttribute="trailing" secondItem="FkQ-5c-EF0" secondAttribute="trailing" constant="209" id="LU6-QH-xG3"/>
                                             <constraint firstAttribute="trailing" secondItem="91g-Z7-ZFe" secondAttribute="trailing" constant="259" id="MCR-7G-kq8"/>
                                             <constraint firstItem="kSt-Qb-YoO" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" id="NO9-VQ-m0Y"/>
+                                            <constraint firstItem="eWc-Kp-YtI" firstAttribute="top" secondItem="JwX-fV-TnY" secondAttribute="bottom" constant="18" id="Nwk-4g-WzA"/>
                                             <constraint firstItem="IYk-y3-wy8" firstAttribute="top" secondItem="mcc-F7-fHq" secondAttribute="top" id="Pbi-GW-rib"/>
                                             <constraint firstItem="4p8-lI-f9M" firstAttribute="leading" secondItem="QQ0-hX-TQS" secondAttribute="trailing" constant="19" id="QaO-OJ-Vqt"/>
                                             <constraint firstItem="05r-WH-3ki" firstAttribute="leading" secondItem="7eT-34-1LF" secondAttribute="trailing" constant="18" id="U11-qN-38A"/>
                                             <constraint firstAttribute="trailing" secondItem="Fw0-PH-zq1" secondAttribute="trailing" id="URh-Tk-RJS"/>
+                                            <constraint firstItem="ykb-8b-uwH" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" id="VpB-jq-2tN"/>
                                             <constraint firstItem="FkQ-5c-EF0" firstAttribute="top" secondItem="kSt-Qb-YoO" secondAttribute="bottom" constant="51" id="W4Q-Gd-dsT"/>
+                                            <constraint firstItem="GxE-w9-iHS" firstAttribute="top" secondItem="JwX-fV-TnY" secondAttribute="bottom" constant="16" id="WMF-ZF-aAk"/>
                                             <constraint firstItem="kSt-Qb-YoO" firstAttribute="top" secondItem="ZcZ-3Y-941" secondAttribute="top" id="YCL-zV-l9x"/>
                                             <constraint firstAttribute="trailing" secondItem="Bbv-Q6-x6w" secondAttribute="trailing" constant="16" id="Yyb-Pe-o1m"/>
                                             <constraint firstAttribute="bottom" secondItem="JwX-fV-TnY" secondAttribute="bottom" constant="363" id="ajS-s7-hef"/>
@@ -804,8 +843,10 @@
                                             <constraint firstItem="IYk-y3-wy8" firstAttribute="bottom" secondItem="4p8-lI-f9M" secondAttribute="bottom" id="ghT-fa-O8V"/>
                                             <constraint firstItem="JwX-fV-TnY" firstAttribute="leading" secondItem="Fw0-PH-zq1" secondAttribute="leading" id="hKW-4Z-X6o"/>
                                             <constraint firstItem="IYk-y3-wy8" firstAttribute="top" secondItem="Fw0-PH-zq1" secondAttribute="bottom" constant="20" id="lJr-Gm-32l"/>
+                                            <constraint firstAttribute="trailing" secondItem="ykb-8b-uwH" secondAttribute="trailing" id="nlo-4h-o11"/>
                                             <constraint firstItem="FkQ-5c-EF0" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" constant="16" id="p2g-Xb-pMG"/>
                                             <constraint firstItem="JwX-fV-TnY" firstAttribute="top" secondItem="7eT-34-1LF" secondAttribute="bottom" constant="17" id="q7C-CB-HLI"/>
+                                            <constraint firstItem="eWc-Kp-YtI" firstAttribute="leading" secondItem="GxE-w9-iHS" secondAttribute="trailing" constant="8" id="uEU-7P-ivG"/>
                                             <constraint firstItem="hux-XO-mI6" firstAttribute="top" secondItem="91g-Z7-ZFe" secondAttribute="bottom" constant="2" id="wtA-rz-U3O"/>
                                             <constraint firstItem="Bbv-Q6-x6w" firstAttribute="leading" secondItem="ZcZ-3Y-941" secondAttribute="leading" constant="16" id="yAd-Hn-esK"/>
                                             <constraint firstItem="Fw0-PH-zq1" firstAttribute="top" secondItem="hux-XO-mI6" secondAttribute="bottom" constant="33" id="yHM-y9-YGc"/>
@@ -901,6 +942,6 @@
         <image name="review" width="14" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cjp-vg-JOF"/>
+        <segue reference="2hv-7Z-7iA"/>
     </inferredMetricsTieBreakers>
 </document>

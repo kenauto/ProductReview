@@ -136,4 +136,8 @@ class ReviewCollectionViewController: UICollectionViewController,UICollectionVie
             return CGSize(width: 343, height: 129)
         }
     }
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
