@@ -80,7 +80,6 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         let photo = ProductImageView.image
         let description = productDescription.text
         
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
         product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, review: "0", description: description!, ratings: nil)
     }
     
