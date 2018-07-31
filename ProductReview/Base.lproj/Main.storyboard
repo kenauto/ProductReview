@@ -46,33 +46,20 @@
                                 <rect key="frame" x="163" y="164" width="48" height="36"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ใส่รูปสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-Wv-T6u">
-                                <rect key="frame" x="152" y="220" width="71.5" height="27"/>
+                                <rect key="frame" x="152" y="220" width="72" height="27"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uQ-ZZ-Ad6">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1uQ-ZZ-Ad6">
                                 <rect key="frame" x="0.0" y="71" width="375" height="265"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="kLA-oe-N9C" appends="YES" id="J94-zF-eN9"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-V0-MUb">
-                                <rect key="frame" x="63" y="600.5" width="250" height="48"/>
-                                <state key="normal" title="addButton" image="addButton"/>
-                                <connections>
-                                    <segue destination="4zc-xd-EWN" kind="unwind" unwindAction="unwindToProductListWithSender:" id="CXi-Bc-jYT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTL-fY-kuF">
-                                <rect key="frame" x="32" y="609.5" width="311" height="32"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-e0-apn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="380" width="343" height="49.5"/>
+                                <rect key="frame" x="16" y="379" width="343" height="49.5"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -84,16 +71,25 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ชื่อสินค้า"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHv-ea-nEo">
-                                <rect key="frame" x="16" y="357" width="343" height="22"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Light" family="Sukhumvit Set" pointSize="14"/>
-                                <color key="textColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USB-Io-MAl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="442" width="343" height="50.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USB-Io-MAl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="16" y="442.5" width="343" height="51"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -105,10 +101,25 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รายละเอียดสินค้า"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-Ir-8Ar" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="505.5" width="343" height="51"/>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-Ir-8Ar" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="16" y="507.5" width="343" height="51"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -120,37 +131,64 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ราคา"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-V0-MUb">
+                                <rect key="frame" x="63" y="574.5" width="250" height="48"/>
+                                <state key="normal" title="addButton" image="addButton"/>
+                                <connections>
+                                    <segue destination="4zc-xd-EWN" kind="unwind" unwindAction="unwindToProductListWithSender:" id="CXi-Bc-jYT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTL-fY-kuF">
+                                <rect key="frame" x="149.5" y="582.5" width="76" height="32"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pjj-e0-apn" firstAttribute="top" secondItem="fHv-ea-nEo" secondAttribute="bottom" constant="1" id="3qs-WO-KCa"/>
-                            <constraint firstItem="82N-zZ-g9n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7AA-2K-lNh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="USB-Io-MAl" secondAttribute="trailing" constant="16" id="A4L-d8-EnG"/>
-                            <constraint firstItem="fHv-ea-nEo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fqx-ly-RWS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fHv-ea-nEo" secondAttribute="trailing" constant="16" id="Gds-pO-U1e"/>
+                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0qv-uI-INW"/>
+                            <constraint firstItem="pjj-e0-apn" firstAttribute="top" secondItem="QZB-MJ-tyA" secondAttribute="bottom" constant="43" id="62G-5V-rWh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZm-V0-MUb" secondAttribute="trailing" constant="62" id="6LX-uz-2iG"/>
+                            <constraint firstItem="fTL-fY-kuF" firstAttribute="centerX" secondItem="KZm-V0-MUb" secondAttribute="centerX" id="ATW-tI-7Dj"/>
+                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="centerY" secondItem="QZB-MJ-tyA" secondAttribute="centerY" constant="30" id="BHv-1c-NTs"/>
+                            <constraint firstItem="pjj-e0-apn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DGm-bd-HDl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="USB-Io-MAl" secondAttribute="trailing" constant="16" id="Db3-EX-cWN"/>
+                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="centerX" secondItem="QZB-MJ-tyA" secondAttribute="centerX" id="GZn-i1-sBq"/>
+                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="top" secondItem="USB-Io-MAl" secondAttribute="bottom" constant="14" id="JMW-Jz-XNC"/>
                             <constraint firstItem="QZB-MJ-tyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KaW-Rf-mPl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YVQ-Ir-8Ar" secondAttribute="trailing" constant="16" id="MZc-8n-bki"/>
-                            <constraint firstItem="KZm-V0-MUb" firstAttribute="top" secondItem="YVQ-Ir-8Ar" secondAttribute="bottom" constant="44" id="UoZ-Nl-hhY"/>
-                            <constraint firstItem="fTL-fY-kuF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Xev-vF-0el"/>
-                            <constraint firstItem="KZm-V0-MUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="Y78-7J-Hu6"/>
-                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZFe-NC-9Gi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjj-e0-apn" secondAttribute="trailing" constant="16" id="b20-Am-loC"/>
-                            <constraint firstItem="fTL-fY-kuF" firstAttribute="top" secondItem="YVQ-Ir-8Ar" secondAttribute="bottom" constant="53" id="cYa-PT-NnE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KZm-V0-MUb" secondAttribute="bottom" constant="16" id="LJq-yl-JMd"/>
+                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="centerX" secondItem="QZB-MJ-tyA" secondAttribute="centerX" id="OJK-gr-kuq"/>
+                            <constraint firstItem="fTL-fY-kuF" firstAttribute="centerY" secondItem="KZm-V0-MUb" secondAttribute="centerY" id="Ptw-W6-Jve"/>
+                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="height" secondItem="QZB-MJ-tyA" secondAttribute="height" id="Tib-00-l95"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YVQ-Ir-8Ar" secondAttribute="trailing" constant="16" id="XuS-hD-CU8"/>
+                            <constraint firstItem="KZm-V0-MUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="bdb-xP-lRN"/>
+                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="centerY" secondItem="QZB-MJ-tyA" secondAttribute="centerY" id="byW-7t-qhR"/>
                             <constraint firstItem="QZB-MJ-tyA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="cg2-qe-jfz"/>
-                            <constraint firstItem="pjj-e0-apn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d1a-1W-GNx"/>
-                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="top" secondItem="USB-Io-MAl" secondAttribute="bottom" constant="13" id="epo-yY-o9P"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZm-V0-MUb" secondAttribute="trailing" constant="62" id="fFD-hW-LJy"/>
-                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="top" secondItem="82N-zZ-g9n" secondAttribute="bottom" constant="20" id="fQY-iP-dzd"/>
-                            <constraint firstItem="82N-zZ-g9n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gNP-XQ-IhR"/>
                             <constraint firstItem="QZB-MJ-tyA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gZT-pY-fLd"/>
-                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="top" secondItem="82N-zZ-g9n" secondAttribute="bottom" constant="20" id="hvt-Bn-Cpe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fTL-fY-kuF" secondAttribute="trailing" constant="32" id="i5C-xQ-5fS"/>
-                            <constraint firstItem="USB-Io-MAl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lyg-JE-xRZ"/>
-                            <constraint firstItem="fHv-ea-nEo" firstAttribute="top" secondItem="QZB-MJ-tyA" secondAttribute="bottom" constant="21" id="nBm-TO-ccl"/>
-                            <constraint firstItem="USB-Io-MAl" firstAttribute="top" secondItem="pjj-e0-apn" secondAttribute="bottom" constant="12.5" id="qdr-g6-oTF"/>
-                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qlP-eW-kn8"/>
+                            <constraint firstItem="82N-zZ-g9n" firstAttribute="centerY" secondItem="QZB-MJ-tyA" secondAttribute="centerY" constant="-21.5" id="h8U-Ms-vNk"/>
+                            <constraint firstItem="KZm-V0-MUb" firstAttribute="top" secondItem="YVQ-Ir-8Ar" secondAttribute="bottom" constant="16" id="hsw-ww-Pnk"/>
+                            <constraint firstItem="USB-Io-MAl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="s44-GU-XLz"/>
+                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="width" secondItem="QZB-MJ-tyA" secondAttribute="width" id="s7c-Zl-zbr"/>
+                            <constraint firstItem="82N-zZ-g9n" firstAttribute="centerX" secondItem="QZB-MJ-tyA" secondAttribute="centerX" id="t8p-TB-qSz"/>
+                            <constraint firstItem="USB-Io-MAl" firstAttribute="top" secondItem="pjj-e0-apn" secondAttribute="bottom" constant="14" id="uGs-KZ-olj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjj-e0-apn" secondAttribute="trailing" constant="16" id="w6q-pg-jXc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -225,7 +263,7 @@
                                 <connections>
                                     <outlet property="image" destination="l8c-AU-0JV" id="XTJ-JC-wG8"/>
                                     <outlet property="label" destination="hY5-kz-4Ie" id="qev-nG-GVz"/>
-                                    <segue destination="A9d-3K-FX3" kind="show" id="UvR-uf-x4P"/>
+                                    <segue destination="A9d-3K-FX3" kind="show" identifier="addReview" id="UvR-uf-x4P"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReviewCollectionViewCell" id="PJp-Wn-Qhp" customClass="ReviewCollectionViewCell" customModule="ProductReview" customModuleProvider="target">
@@ -280,57 +318,89 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoticonLike" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-WN-0Td">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonLike" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-WN-0Td">
                                     <rect key="frame" x="38" y="16" width="27" height="27"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="27" id="TYK-Ds-hC8"/>
+                                        <constraint firstAttribute="height" constant="27" id="rnH-3N-ZbH"/>
+                                    </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXa-kp-Faw">
-                                    <rect key="frame" x="77" y="16" width="60" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXa-kp-Faw">
+                                    <rect key="frame" x="77" y="16" width="45" height="22.5"/>
                                     <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="19"/>
                                     <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoticonFair" translatesAutoresizingMaskIntoConstraints="NO" id="W2I-Qn-iKN">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="emoticonFair" translatesAutoresizingMaskIntoConstraints="NO" id="W2I-Qn-iKN">
                                     <rect key="frame" x="155" y="16" width="27" height="27"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="27" id="8UB-zS-5n0"/>
+                                        <constraint firstAttribute="height" constant="27" id="rJq-EN-G7S"/>
+                                    </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehM-K0-buv">
-                                    <rect key="frame" x="194" y="16" width="60" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehM-K0-buv">
+                                    <rect key="frame" x="197" y="16" width="45" height="22.5"/>
                                     <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="19"/>
                                     <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoticonSad" translatesAutoresizingMaskIntoConstraints="NO" id="WPX-gG-L19">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="emoticonSad" translatesAutoresizingMaskIntoConstraints="NO" id="WPX-gG-L19">
                                     <rect key="frame" x="273" y="16" width="27" height="27"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="27" id="D1M-MT-z89"/>
+                                        <constraint firstAttribute="width" constant="27" id="SXI-MD-yh2"/>
+                                    </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-dI-Y7B">
-                                    <rect key="frame" x="312" y="16" width="60" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-dI-Y7B">
+                                    <rect key="frame" x="315" y="16" width="45" height="22.5"/>
                                     <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="19"/>
                                     <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-fS-hAs">
-                                    <rect key="frame" x="0.0" y="63" width="375" height="10"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-fS-hAs">
+                                    <rect key="frame" x="0.0" y="55.5" width="375" height="17.5"/>
                                     <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWe-Fo-HmV">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWe-Fo-HmV">
                                     <rect key="frame" x="16" y="89" width="4" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="I1e-Hb-gjA"/>
+                                        <constraint firstAttribute="width" constant="4" id="m1B-RF-9Wu"/>
+                                    </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="รีวิวสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ma7-iZ-hmb">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รีวิวสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ma7-iZ-hmb">
                                     <rect key="frame" x="28" y="91" width="66" height="27"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="17"/>
                                     <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="6vW-fS-hAs" secondAttribute="trailing" id="71E-IJ-xO1"/>
+                                <constraint firstAttribute="bottom" secondItem="6vW-fS-hAs" secondAttribute="bottom" constant="51" id="75m-br-gVr"/>
+                                <constraint firstAttribute="bottom" secondItem="Ma7-iZ-hmb" secondAttribute="bottom" constant="6" id="7mc-UE-E0T"/>
+                                <constraint firstItem="6vW-fS-hAs" firstAttribute="leading" secondItem="VjB-ff-8vP" secondAttribute="leading" id="Cja-Dm-5m6"/>
+                                <constraint firstAttribute="trailing" secondItem="Ma7-iZ-hmb" secondAttribute="trailing" constant="281" id="Ht8-jo-SB3"/>
+                                <constraint firstItem="a3w-dI-Y7B" firstAttribute="top" secondItem="VjB-ff-8vP" secondAttribute="topMargin" constant="8" id="Mjd-LS-JEf"/>
+                                <constraint firstItem="W2I-Qn-iKN" firstAttribute="leading" secondItem="tXa-kp-Faw" secondAttribute="trailing" constant="33" id="O7b-qE-n6P"/>
+                                <constraint firstItem="BWe-Fo-HmV" firstAttribute="top" secondItem="6vW-fS-hAs" secondAttribute="bottom" constant="16" id="UHg-xB-fO5"/>
+                                <constraint firstItem="6vW-fS-hAs" firstAttribute="top" secondItem="tXa-kp-Faw" secondAttribute="bottom" constant="17" id="Y8r-v8-T0k"/>
+                                <constraint firstItem="WPX-gG-L19" firstAttribute="leading" secondItem="ehM-K0-buv" secondAttribute="trailing" constant="31" id="aPz-eL-TBz"/>
+                                <constraint firstItem="W2I-Qn-iKN" firstAttribute="top" secondItem="VjB-ff-8vP" secondAttribute="topMargin" constant="8" id="bf4-iX-guf"/>
+                                <constraint firstItem="oRb-WN-0Td" firstAttribute="top" secondItem="VjB-ff-8vP" secondAttribute="topMargin" constant="8" id="feX-Py-soT"/>
+                                <constraint firstItem="ehM-K0-buv" firstAttribute="top" secondItem="VjB-ff-8vP" secondAttribute="topMargin" constant="8" id="fkE-aS-Kn4"/>
+                                <constraint firstItem="WPX-gG-L19" firstAttribute="top" secondItem="VjB-ff-8vP" secondAttribute="topMargin" constant="8" id="fmO-bA-mjb"/>
+                                <constraint firstItem="Ma7-iZ-hmb" firstAttribute="leading" secondItem="BWe-Fo-HmV" secondAttribute="trailing" constant="8" id="kDM-YP-OqJ"/>
+                                <constraint firstItem="oRb-WN-0Td" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VjB-ff-8vP" secondAttribute="leadingMargin" constant="30" id="lOt-xC-Y5w"/>
+                                <constraint firstItem="BWe-Fo-HmV" firstAttribute="leading" secondItem="VjB-ff-8vP" secondAttribute="leadingMargin" constant="8" id="m2x-FM-1oC"/>
+                                <constraint firstItem="Ma7-iZ-hmb" firstAttribute="top" secondItem="6vW-fS-hAs" secondAttribute="bottom" constant="18" id="mFL-xp-CcO"/>
+                                <constraint firstItem="a3w-dI-Y7B" firstAttribute="leading" secondItem="WPX-gG-L19" secondAttribute="trailing" constant="15" id="mMD-Bz-Lbz"/>
+                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="a3w-dI-Y7B" secondAttribute="trailing" constant="7" id="qHa-j2-NKb"/>
+                                <constraint firstItem="ehM-K0-buv" firstAttribute="leading" secondItem="W2I-Qn-iKN" secondAttribute="trailing" constant="15" id="sAI-Gt-m6H"/>
+                                <constraint firstItem="tXa-kp-Faw" firstAttribute="top" secondItem="VjB-ff-8vP" secondAttribute="topMargin" constant="8" id="sbW-U4-XVH"/>
+                                <constraint firstItem="tXa-kp-Faw" firstAttribute="leading" secondItem="oRb-WN-0Td" secondAttribute="trailing" constant="12" id="v0i-vc-8HK"/>
+                            </constraints>
                             <connections>
                                 <outlet property="productFairRating" destination="ehM-K0-buv" id="NwA-2S-j1t"/>
                                 <outlet property="productLikeRating" destination="tXa-kp-Faw" id="9MO-Ar-L2u"/>
@@ -355,7 +425,7 @@
             </objects>
             <point key="canvasLocation" x="4684" y="769.56521739130437"/>
         </scene>
-        <!--Add Review View Controller-->
+        <!--รีวิวสินค้า-->
         <scene sceneID="mBU-BW-zgC">
             <objects>
                 <viewController id="A9d-3K-FX3" customClass="AddReviewViewController" customModule="ProductReview" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,7 +455,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyp-wW-0Ya">
                                                 <rect key="frame" x="16" y="265" width="150" height="32"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="pqi-al-pKS"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="pqi-al-pKS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                                 <color key="textColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -414,35 +484,122 @@
                                                     <constraint firstAttribute="height" constant="10" id="U3i-Th-R9y"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-8z-HaU">
-                                                <rect key="frame" x="108" y="491" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="YMD-Vd-pcV"/>
-                                                    <constraint firstAttribute="width" constant="44" id="xUI-7Z-pMC"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="emoticonLike"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn3-Ai-XXh">
-                                                <rect key="frame" x="164.5" y="491" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="44" id="8tL-Yc-MWl"/>
-                                                    <constraint firstAttribute="height" constant="44" id="PG7-of-05m"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="emoticonFair"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJN-5R-C7L">
-                                                <rect key="frame" x="221" y="492" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="frj-JA-euC"/>
-                                                    <constraint firstAttribute="width" constant="44" id="wpb-uF-mJW"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="emoticonSad"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คุณรู้สึกอย่างไร?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsD-YD-3d4">
                                                 <rect key="frame" x="16" y="447" width="343" height="37"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="23"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonSad" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-As-Ecu">
+                                                <rect key="frame" x="230" y="502" width="28" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="7ah-DP-B2x"/>
+                                                    <constraint firstAttribute="width" constant="28" id="p8c-RT-jgo"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonLike" translatesAutoresizingMaskIntoConstraints="NO" id="Mi6-7r-d4c">
+                                                <rect key="frame" x="117" y="501" width="28" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="c91-WV-aL0"/>
+                                                    <constraint firstAttribute="height" constant="24" id="jqu-W2-TC0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonFair" translatesAutoresizingMaskIntoConstraints="NO" id="DEl-yU-HUo">
+                                                <rect key="frame" x="173" y="501" width="28" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="IzG-8T-Wht"/>
+                                                    <constraint firstAttribute="width" constant="28" id="l43-vx-0YE"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-8z-HaU">
+                                                <rect key="frame" x="109" y="491" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="YMD-Vd-pcV"/>
+                                                    <constraint firstAttribute="width" constant="44" id="xUI-7Z-pMC"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="emoticonLike"/>
+                                                <connections>
+                                                    <action selector="likeAction:" destination="A9d-3K-FX3" eventType="touchUpInside" id="pMi-Ty-fa3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn3-Ai-XXh">
+                                                <rect key="frame" x="165.5" y="491" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="8tL-Yc-MWl"/>
+                                                    <constraint firstAttribute="height" constant="44" id="PG7-of-05m"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="emoticonFair"/>
+                                                <connections>
+                                                    <action selector="fairAction:" destination="A9d-3K-FX3" eventType="touchUpInside" id="rey-da-yL4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJN-5R-C7L">
+                                                <rect key="frame" x="222" y="492" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="frj-JA-euC"/>
+                                                    <constraint firstAttribute="width" constant="44" id="wpb-uF-mJW"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="emoticonSad"/>
+                                                <connections>
+                                                    <action selector="sadAction:" destination="A9d-3K-FX3" eventType="touchUpInside" id="rIt-Ll-wak"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6qd-Gz-YeO" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="16" y="550" width="343" height="49.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รีวิวของคุณ"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ชื่อผู้รีวิว" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wj1-gQ-mis" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="16" y="615" width="343" height="51"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axN-Rk-WkH">
+                                                <rect key="frame" x="62" y="698" width="250" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="7Nk-Sh-f3P"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="addButton"/>
+                                                <connections>
+                                                    <action selector="addReviewButton:" destination="A9d-3K-FX3" eventType="touchUpInside" id="pTf-gx-4mv"/>
+                                                    <segue destination="mn4-Nj-fv2" kind="unwind" unwindAction="unwindToProductListWithSender:" id="Bmw-9B-0cq"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มรีวิว" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5d-3b-cDi">
+                                                <rect key="frame" x="157" y="706" width="61.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -451,27 +608,46 @@
                                             <constraint firstItem="pov-51-P8P" firstAttribute="top" secondItem="VHk-v5-hYO" secondAttribute="bottom" constant="13" id="2ed-wB-cgC"/>
                                             <constraint firstItem="iyp-wW-0Ya" firstAttribute="top" secondItem="4TC-Di-6lj" secondAttribute="bottom" id="2fk-y8-Bxz"/>
                                             <constraint firstItem="lJN-5R-C7L" firstAttribute="leading" secondItem="xn3-Ai-XXh" secondAttribute="trailing" constant="12.5" id="2jM-z8-T4B"/>
+                                            <constraint firstAttribute="bottom" secondItem="axN-Rk-WkH" secondAttribute="bottom" constant="13" id="4Wt-d5-cCC"/>
                                             <constraint firstItem="xn3-Ai-XXh" firstAttribute="leading" secondItem="RXJ-8z-HaU" secondAttribute="trailing" constant="12.5" id="6sg-ow-uV0"/>
-                                            <constraint firstItem="RXJ-8z-HaU" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="108" id="8in-YO-Zs4"/>
+                                            <constraint firstItem="x5d-3b-cDi" firstAttribute="centerX" secondItem="axN-Rk-WkH" secondAttribute="centerX" id="80o-dV-t6u"/>
+                                            <constraint firstItem="RXJ-8z-HaU" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" priority="750" constant="108" id="8in-YO-Zs4"/>
+                                            <constraint firstItem="xn3-Ai-XXh" firstAttribute="centerX" secondItem="Zs0-ce-Ohv" secondAttribute="centerX" id="9La-DW-0qU"/>
                                             <constraint firstItem="4TC-Di-6lj" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="9MI-y4-QJf"/>
                                             <constraint firstItem="lJN-5R-C7L" firstAttribute="top" secondItem="EsD-YD-3d4" secondAttribute="bottom" constant="8" id="9oy-h6-8YA"/>
                                             <constraint firstItem="VHk-v5-hYO" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="9tJ-aF-9xt"/>
                                             <constraint firstAttribute="trailing" secondItem="uSX-8l-HVo" secondAttribute="trailing" constant="16" id="DHY-7u-PW2"/>
                                             <constraint firstItem="GRi-1k-Nhl" firstAttribute="top" secondItem="Zs0-ce-Ohv" secondAttribute="top" id="EgE-Cc-Set"/>
                                             <constraint firstItem="GRi-1k-Nhl" firstAttribute="centerX" secondItem="Zs0-ce-Ohv" secondAttribute="centerX" id="Eid-5v-oP1"/>
+                                            <constraint firstItem="axN-Rk-WkH" firstAttribute="top" secondItem="Wj1-gQ-mis" secondAttribute="bottom" constant="32" id="NM1-Yq-mQb"/>
                                             <constraint firstItem="VHk-v5-hYO" firstAttribute="top" secondItem="uSX-8l-HVo" secondAttribute="bottom" constant="2" id="NPL-ml-Zxn"/>
+                                            <constraint firstItem="Wj1-gQ-mis" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="QFq-4y-sQH"/>
                                             <constraint firstItem="xn3-Ai-XXh" firstAttribute="top" secondItem="EsD-YD-3d4" secondAttribute="bottom" constant="7" id="QUd-rq-mXH"/>
-                                            <constraint firstAttribute="trailing" secondItem="lJN-5R-C7L" secondAttribute="trailing" constant="110" id="SRi-yu-hic"/>
+                                            <constraint firstAttribute="trailing" secondItem="lJN-5R-C7L" secondAttribute="trailing" priority="750" constant="110" id="SRi-yu-hic"/>
                                             <constraint firstItem="4TC-Di-6lj" firstAttribute="top" secondItem="GRi-1k-Nhl" secondAttribute="bottom" constant="26" id="Tqb-It-4La"/>
                                             <constraint firstItem="pov-51-P8P" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" id="ULE-yK-NhA"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iyp-wW-0Ya" secondAttribute="trailing" constant="20" symbolic="YES" id="YBc-Ds-Ra7"/>
                                             <constraint firstAttribute="trailing" secondItem="VHk-v5-hYO" secondAttribute="trailing" constant="16" id="YmH-l2-WPa"/>
                                             <constraint firstItem="lJN-5R-C7L" firstAttribute="leading" secondItem="xn3-Ai-XXh" secondAttribute="trailing" constant="12.5" id="ZQR-Fs-Fmd"/>
+                                            <constraint firstItem="6qd-Gz-YeO" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="ZVi-yI-oHO"/>
+                                            <constraint firstItem="nNr-As-Ecu" firstAttribute="centerX" secondItem="lJN-5R-C7L" secondAttribute="centerX" id="ZuZ-Mf-myd"/>
+                                            <constraint firstItem="DEl-yU-HUo" firstAttribute="centerY" secondItem="xn3-Ai-XXh" secondAttribute="centerY" id="a0w-dF-hg5"/>
                                             <constraint firstAttribute="trailing" secondItem="pov-51-P8P" secondAttribute="trailing" id="bIq-KK-Qlg"/>
+                                            <constraint firstItem="x5d-3b-cDi" firstAttribute="centerY" secondItem="axN-Rk-WkH" secondAttribute="centerY" id="biu-7V-81V"/>
+                                            <constraint firstItem="Wj1-gQ-mis" firstAttribute="top" secondItem="6qd-Gz-YeO" secondAttribute="bottom" constant="15.5" id="gWJ-Ka-02E"/>
+                                            <constraint firstItem="nNr-As-Ecu" firstAttribute="centerY" secondItem="lJN-5R-C7L" secondAttribute="centerY" id="iSd-D2-Uja"/>
                                             <constraint firstItem="RXJ-8z-HaU" firstAttribute="top" secondItem="EsD-YD-3d4" secondAttribute="bottom" constant="7" id="if5-Fb-3Pw"/>
                                             <constraint firstAttribute="trailing" secondItem="EsD-YD-3d4" secondAttribute="trailing" constant="16" id="jFO-je-QZR"/>
+                                            <constraint firstItem="axN-Rk-WkH" firstAttribute="centerX" secondItem="Zs0-ce-Ohv" secondAttribute="centerX" id="jR8-9N-hPm"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wj1-gQ-mis" secondAttribute="trailing" constant="16" id="k5g-Ig-JRg"/>
                                             <constraint firstAttribute="trailing" secondItem="4TC-Di-6lj" secondAttribute="trailing" constant="16" id="l3x-Vk-r7n"/>
+                                            <constraint firstAttribute="trailing" secondItem="6qd-Gz-YeO" secondAttribute="trailing" constant="16" id="mlC-9h-0S9"/>
                                             <constraint firstItem="EsD-YD-3d4" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="n82-t1-XfJ"/>
                                             <constraint firstItem="xn3-Ai-XXh" firstAttribute="leading" secondItem="RXJ-8z-HaU" secondAttribute="trailing" constant="12.5" id="n92-ar-b1N"/>
+                                            <constraint firstItem="Mi6-7r-d4c" firstAttribute="centerY" secondItem="RXJ-8z-HaU" secondAttribute="centerY" id="qf9-ND-Zig"/>
+                                            <constraint firstItem="DEl-yU-HUo" firstAttribute="centerX" secondItem="xn3-Ai-XXh" secondAttribute="centerX" id="rha-gr-m28"/>
+                                            <constraint firstItem="Mi6-7r-d4c" firstAttribute="centerX" secondItem="RXJ-8z-HaU" secondAttribute="centerX" id="sfa-bp-BAW"/>
+                                            <constraint firstItem="6qd-Gz-YeO" firstAttribute="top" secondItem="lJN-5R-C7L" secondAttribute="bottom" constant="14" id="sj3-Z9-Zul"/>
                                             <constraint firstItem="EsD-YD-3d4" firstAttribute="top" secondItem="pov-51-P8P" secondAttribute="bottom" constant="12" id="vWT-gW-NHg"/>
                                             <constraint firstItem="iyp-wW-0Ya" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="vz2-BW-C4c"/>
                                             <constraint firstItem="uSX-8l-HVo" firstAttribute="leading" secondItem="Zs0-ce-Ohv" secondAttribute="leading" constant="16" id="zK3-ML-vCB"/>
@@ -497,7 +673,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yvq-ic-roZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gah-P3-PlD">
+                    <navigationItem key="navigationItem" title="รีวิวสินค้า" id="gah-P3-PlD">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="zwf-IT-uE1">
                             <color key="tintColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -506,8 +682,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="823"/>
+                    <connections>
+                        <outlet property="addReviewButton" destination="axN-Rk-WkH" id="fWO-ra-0jt"/>
+                        <outlet property="fairButton" destination="xn3-Ai-XXh" id="r71-Ni-2EV"/>
+                        <outlet property="likeButton" destination="RXJ-8z-HaU" id="jIy-Y6-hbT"/>
+                        <outlet property="productDescription" destination="VHk-v5-hYO" id="YVd-bx-oS9"/>
+                        <outlet property="productDescriptionHead" destination="uSX-8l-HVo" id="0wR-OA-ptX"/>
+                        <outlet property="productImage" destination="GRi-1k-Nhl" id="qdf-kw-sPo"/>
+                        <outlet property="productName" destination="4TC-Di-6lj" id="Nmx-dz-00K"/>
+                        <outlet property="productPrice" destination="iyp-wW-0Ya" id="QGz-JS-Mha"/>
+                        <outlet property="reviewDescription" destination="6qd-Gz-YeO" id="MAC-RH-z1b"/>
+                        <outlet property="reviewName" destination="6qd-Gz-YeO" id="60a-Fo-gDW"/>
+                        <outlet property="sadButton" destination="lJN-5R-C7L" id="mO7-6S-Kp4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0D3-kd-S01" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mn4-Nj-fv2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6188" y="769.56521739130437"/>
         </scene>
@@ -862,7 +1052,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-Gv-nc1">
-                                                <rect key="frame" x="284" y="721" width="67" height="36"/>
+                                                <rect key="frame" x="284" y="721" width="67" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="mr2-R2-SEj"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="15"/>
                                                 <state key="normal" title="ดูทั้งหมด &gt;">
                                                     <color key="titleColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1085,6 +1278,6 @@
         <image name="review" width="14" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2hv-7Z-7iA"/>
+        <segue reference="Cjp-vg-JOF"/>
     </inferredMetricsTieBreakers>
 </document>

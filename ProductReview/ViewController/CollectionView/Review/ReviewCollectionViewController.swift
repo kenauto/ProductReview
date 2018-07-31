@@ -34,15 +34,25 @@ class ReviewCollectionViewController: UICollectionViewController,UICollectionVie
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        switch(segue.identifier ?? "") {
+            
+        case "addReview":
+            guard let AddReviewViewController = segue.destination as? AddReviewViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            AddReviewViewController.product = product
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -139,5 +149,6 @@ class ReviewCollectionViewController: UICollectionViewController,UICollectionVie
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     
 }

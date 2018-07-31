@@ -181,6 +181,11 @@ class ProductCollectionViewController: UICollectionViewController {
             }
             }
         }
+        if let sourceViewController = sender.source as? AddReviewViewController, let product = sourceViewController.product{
+            let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first
+            Products[(selectedIndexPath?.item)!-1] = product
+            
+        }
     }
     
     //MARK: Private function

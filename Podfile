@@ -8,6 +8,7 @@ target 'ProductReview' do
   # Pods for ProductReview
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'JVFloatLabeledTextField'
+  pod 'IQKeyboardManagerSwift'
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
         config.build_settings.delete('CODE_SIGNING_ALLOWED')
