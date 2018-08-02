@@ -11,7 +11,7 @@ import SkyFloatingLabelTextField
 import JVFloatLabeledTextField
 import os.log
 
-class AddProductViewController: UIViewController,UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate {
+class AddProductViewController: UIViewController,UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate {
     
     
     //MARK: Property
@@ -20,7 +20,9 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     @IBOutlet weak var ProductImageView: UIImageView!
     @IBOutlet weak var productName: SkyFloatingLabelTextField!
     @IBOutlet weak var productPrice: SkyFloatingLabelTextField!
-    @IBOutlet weak var productDescription: SkyFloatingLabelTextField!
+//    @IBOutlet weak var productDescription: UITextView!
+    @IBOutlet weak var productDescription: JVFloatLabeledTextView!
+    
     var product: Product?
     var ratingS = 0
     var ratingF = 0
@@ -87,11 +89,17 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        productDescription.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        productDescription.font = UIFont(name: "SukhumvitSet-Text", size: 17.0)!
+        productDescription.setBottomBorderWithColor(color: UIColor.darkGray, height: 2)
         if let product = product{
             ProductImageView.image = product.photo
             productName.text = product.name
             productPrice.text = product.price
+            
+//            productDescription.float
+//
             productDescription.text = product.productDescription
             ratingL = product.rating.like
             ratingF = product.rating.fair
@@ -105,6 +113,8 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func textViewDidChange(_ textView: UITextView) {
+        textView.setBottomBorderWithColor(color: UIColor.darkGray, height: 2)
+    }
 }
 

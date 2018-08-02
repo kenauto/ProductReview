@@ -35,162 +35,162 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-MJ-tyA">
-                                <rect key="frame" x="0.0" y="71" width="375" height="265"/>
-                                <color key="backgroundColor" red="0.59215686274509804" green="0.61568627450980395" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="763-x1-1Fi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHb-ms-wb8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buI-0d-uv5">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                                <color key="backgroundColor" red="0.59215686270000001" green="0.61568627450000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="375" id="9df-zz-18J"/>
+                                                    <constraint firstAttribute="width" secondItem="buI-0d-uv5" secondAttribute="height" multiplier="75:53" id="Tce-Py-8xg"/>
+                                                    <constraint firstAttribute="height" constant="265" id="tq4-op-bUT"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="JPm-nV-RYm">
+                                                <rect key="frame" x="164" y="93" width="48" height="36"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ใส่รูปสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-WH-14E">
+                                                <rect key="frame" x="151.5" y="149" width="72" height="27"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaE-cj-DMz">
+                                                <rect key="frame" x="1" y="0.0" width="375" height="265"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-BC-9It" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="16" y="273" width="343" height="50"/>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ชื่อสินค้า"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-hg-yCW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="16" y="401" width="343" height="51"/>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ราคา"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-GR-JHF">
+                                                <rect key="frame" x="63" y="468" width="250" height="48"/>
+                                                <state key="normal" title="addButton" image="addButton"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ky-5P-6FL">
+                                                <rect key="frame" x="150" y="476" width="76" height="32"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-KS-Ikg" customClass="JVFloatLabeledTextView">
+                                                <rect key="frame" x="16" y="342" width="343" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51" id="Dnb-zs-WVZ"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รายละเอียดสินค้า"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4b8-KS-Ikg" secondAttribute="trailing" constant="16" id="5s6-jV-Cgp"/>
+                                            <constraint firstItem="bNT-WH-14E" firstAttribute="top" secondItem="JPm-nV-RYm" secondAttribute="bottom" constant="20" id="6qe-zd-VSj"/>
+                                            <constraint firstItem="4ky-5P-6FL" firstAttribute="centerX" secondItem="HXW-GR-JHF" secondAttribute="centerX" id="Cc5-Ly-vP4"/>
+                                            <constraint firstItem="HXW-GR-JHF" firstAttribute="top" secondItem="yOv-hg-yCW" secondAttribute="bottom" constant="16" id="E9m-nP-1Uw"/>
+                                            <constraint firstAttribute="trailing" secondItem="HXW-GR-JHF" secondAttribute="trailing" constant="62" id="EQF-Qb-jBz"/>
+                                            <constraint firstItem="bNT-WH-14E" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="F6e-GI-eIG"/>
+                                            <constraint firstAttribute="bottom" secondItem="HXW-GR-JHF" secondAttribute="bottom" constant="87" id="Qs0-or-zcP"/>
+                                            <constraint firstItem="4b8-KS-Ikg" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="16" id="RZp-O4-Ei0"/>
+                                            <constraint firstItem="4b8-KS-Ikg" firstAttribute="top" secondItem="Ti2-BC-9It" secondAttribute="bottom" constant="19" id="SPl-Cz-Lu3"/>
+                                            <constraint firstAttribute="trailing" secondItem="buI-0d-uv5" secondAttribute="trailing" id="WMh-ZA-8Z1"/>
+                                            <constraint firstItem="Ti2-BC-9It" firstAttribute="top" secondItem="buI-0d-uv5" secondAttribute="bottom" constant="8" id="YRa-cP-mQW"/>
+                                            <constraint firstItem="4b8-KS-Ikg" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="Z22-5w-8V6"/>
+                                            <constraint firstItem="yOv-hg-yCW" firstAttribute="top" secondItem="4b8-KS-Ikg" secondAttribute="bottom" constant="8" id="aZ5-Pz-JFt"/>
+                                            <constraint firstItem="yOv-hg-yCW" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="aa0-Ci-stB"/>
+                                            <constraint firstItem="4ky-5P-6FL" firstAttribute="centerY" secondItem="HXW-GR-JHF" secondAttribute="centerY" id="cqx-JN-ndW"/>
+                                            <constraint firstItem="JPm-nV-RYm" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="cr1-aw-p2u"/>
+                                            <constraint firstItem="JPm-nV-RYm" firstAttribute="top" secondItem="vHb-ms-wb8" secondAttribute="top" constant="93" id="fnH-Ue-nfJ"/>
+                                            <constraint firstItem="Ti2-BC-9It" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="iXG-tP-1af"/>
+                                            <constraint firstItem="buI-0d-uv5" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" id="lFP-ar-jPu"/>
+                                            <constraint firstItem="HXW-GR-JHF" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="63" id="m0P-FQ-GCa"/>
+                                            <constraint firstItem="buI-0d-uv5" firstAttribute="top" secondItem="vHb-ms-wb8" secondAttribute="top" id="yaI-aX-58t"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="QZB-MJ-tyA" secondAttribute="height" multiplier="75:53" id="NZI-rF-E1s"/>
+                                    <constraint firstItem="vHb-ms-wb8" firstAttribute="height" secondItem="763-x1-1Fi" secondAttribute="height" priority="250" id="Jgx-mJ-hb4"/>
+                                    <constraint firstAttribute="trailing" secondItem="vHb-ms-wb8" secondAttribute="trailing" id="Ktq-Fe-aVy"/>
+                                    <constraint firstAttribute="bottom" secondItem="vHb-ms-wb8" secondAttribute="bottom" id="OCp-xJ-igz"/>
+                                    <constraint firstItem="vHb-ms-wb8" firstAttribute="width" secondItem="763-x1-1Fi" secondAttribute="width" id="Rcl-0C-yzR"/>
+                                    <constraint firstItem="vHb-ms-wb8" firstAttribute="top" secondItem="763-x1-1Fi" secondAttribute="top" id="bbl-rZ-WMC"/>
+                                    <constraint firstItem="vHb-ms-wb8" firstAttribute="leading" secondItem="763-x1-1Fi" secondAttribute="leading" id="wG2-xb-Zcf"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="82N-zZ-g9n">
-                                <rect key="frame" x="163" y="164" width="48" height="36"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ใส่รูปสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-Wv-T6u">
-                                <rect key="frame" x="152" y="220" width="72" height="27"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1uQ-ZZ-Ad6">
-                                <rect key="frame" x="0.0" y="71" width="375" height="265"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="kLA-oe-N9C" appends="YES" id="J94-zF-eN9"/>
-                                </connections>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-e0-apn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="379" width="343" height="49.5"/>
-                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ชื่อสินค้า"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USB-Io-MAl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="442.5" width="343" height="50.5"/>
-                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รายละเอียดสินค้า"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-Ir-8Ar" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="507" width="343" height="51"/>
-                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ราคา"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-V0-MUb">
-                                <rect key="frame" x="63" y="574" width="250" height="48"/>
-                                <state key="normal" title="addButton" image="addButton"/>
-                                <connections>
-                                    <segue destination="4zc-xd-EWN" kind="unwind" unwindAction="unwindToProductListWithSender:" id="CXi-Bc-jYT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTL-fY-kuF">
-                                <rect key="frame" x="149.5" y="582" width="76" height="32"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0qv-uI-INW"/>
-                            <constraint firstItem="pjj-e0-apn" firstAttribute="top" secondItem="QZB-MJ-tyA" secondAttribute="bottom" constant="43" id="62G-5V-rWh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZm-V0-MUb" secondAttribute="trailing" constant="62" id="6LX-uz-2iG"/>
-                            <constraint firstItem="fTL-fY-kuF" firstAttribute="centerX" secondItem="KZm-V0-MUb" secondAttribute="centerX" id="ATW-tI-7Dj"/>
-                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="centerY" secondItem="QZB-MJ-tyA" secondAttribute="centerY" constant="30" id="BHv-1c-NTs"/>
-                            <constraint firstItem="pjj-e0-apn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DGm-bd-HDl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="USB-Io-MAl" secondAttribute="trailing" constant="16" id="Db3-EX-cWN"/>
-                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="centerX" secondItem="QZB-MJ-tyA" secondAttribute="centerX" id="GZn-i1-sBq"/>
-                            <constraint firstItem="YVQ-Ir-8Ar" firstAttribute="top" secondItem="USB-Io-MAl" secondAttribute="bottom" constant="14" id="JMW-Jz-XNC"/>
-                            <constraint firstItem="QZB-MJ-tyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KaW-Rf-mPl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KZm-V0-MUb" secondAttribute="bottom" constant="16" id="LJq-yl-JMd"/>
-                            <constraint firstItem="L9K-Wv-T6u" firstAttribute="centerX" secondItem="QZB-MJ-tyA" secondAttribute="centerX" id="OJK-gr-kuq"/>
-                            <constraint firstItem="fTL-fY-kuF" firstAttribute="centerY" secondItem="KZm-V0-MUb" secondAttribute="centerY" id="Ptw-W6-Jve"/>
-                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="height" secondItem="QZB-MJ-tyA" secondAttribute="height" id="Tib-00-l95"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YVQ-Ir-8Ar" secondAttribute="trailing" constant="16" id="XuS-hD-CU8"/>
-                            <constraint firstItem="KZm-V0-MUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="bdb-xP-lRN"/>
-                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="centerY" secondItem="QZB-MJ-tyA" secondAttribute="centerY" id="byW-7t-qhR"/>
-                            <constraint firstItem="QZB-MJ-tyA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="cg2-qe-jfz"/>
-                            <constraint firstItem="QZB-MJ-tyA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gZT-pY-fLd"/>
-                            <constraint firstItem="82N-zZ-g9n" firstAttribute="centerY" secondItem="QZB-MJ-tyA" secondAttribute="centerY" constant="-21.5" id="h8U-Ms-vNk"/>
-                            <constraint firstItem="KZm-V0-MUb" firstAttribute="top" secondItem="YVQ-Ir-8Ar" secondAttribute="bottom" constant="16" id="hsw-ww-Pnk"/>
-                            <constraint firstItem="USB-Io-MAl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="s44-GU-XLz"/>
-                            <constraint firstItem="1uQ-ZZ-Ad6" firstAttribute="width" secondItem="QZB-MJ-tyA" secondAttribute="width" id="s7c-Zl-zbr"/>
-                            <constraint firstItem="82N-zZ-g9n" firstAttribute="centerX" secondItem="QZB-MJ-tyA" secondAttribute="centerX" id="t8p-TB-qSz"/>
-                            <constraint firstItem="USB-Io-MAl" firstAttribute="top" secondItem="pjj-e0-apn" secondAttribute="bottom" constant="14" id="uGs-KZ-olj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjj-e0-apn" secondAttribute="trailing" constant="16" id="w6q-pg-jXc"/>
+                            <constraint firstItem="763-x1-1Fi" firstAttribute="bottom" secondItem="xJ3-q0-U05" secondAttribute="bottom" id="99X-sc-fzC"/>
+                            <constraint firstItem="763-x1-1Fi" firstAttribute="trailing" secondItem="xJ3-q0-U05" secondAttribute="trailing" id="Zxe-He-FB5"/>
+                            <constraint firstItem="763-x1-1Fi" firstAttribute="top" secondItem="xJ3-q0-U05" secondAttribute="top" id="d22-GE-YcU"/>
+                            <constraint firstItem="763-x1-1Fi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pdC-cD-24i"/>
+                            <constraint firstItem="xJ3-q0-U05" firstAttribute="leading" secondItem="763-x1-1Fi" secondAttribute="leading" id="vXS-Gr-MfG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="xJ3-q0-U05"/>
                     </view>
                     <navigationItem key="navigationItem" title="เพิ่มสินค้า" id="Dnh-wt-Qpf">
                         <barButtonItem key="leftBarButtonItem" title="cancel" image="back" id="UBq-pf-SwT">
@@ -200,16 +200,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="ProductImageView" destination="1uQ-ZZ-Ad6" id="WiG-Kr-167"/>
-                        <outlet property="addButton" destination="KZm-V0-MUb" id="VYc-pj-GrW"/>
-                        <outlet property="productDescription" destination="USB-Io-MAl" id="IbU-9u-eXv"/>
-                        <outlet property="productName" destination="pjj-e0-apn" id="G8x-WW-CMI"/>
-                        <outlet property="productPrice" destination="YVQ-Ir-8Ar" id="g6C-5Q-V5m"/>
+                        <outlet property="ProductImageView" destination="TaE-cj-DMz" id="EQ2-Z4-ecf"/>
+                        <outlet property="addButton" destination="HXW-GR-JHF" id="aO7-wW-nLH"/>
+                        <outlet property="productDescription" destination="4b8-KS-Ikg" id="nIV-4Y-D2D"/>
+                        <outlet property="productName" destination="Ti2-BC-9It" id="faO-Wn-di6"/>
+                        <outlet property="productPrice" destination="yOv-hg-yCW" id="Ljy-wX-MJk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="4zc-xd-EWN" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="kLA-oe-N9C">
                     <connections>
                         <action selector="selectPhotoFromLibrary:" destination="BYZ-38-t0r" id="jbF-5q-WfX"/>
@@ -666,12 +666,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RgU-Qs-12h" firstAttribute="leading" secondItem="yvq-ic-roZ" secondAttribute="leading" id="0Xc-kY-qOZ"/>
-                            <constraint firstItem="RgU-Qs-12h" firstAttribute="top" secondItem="yvq-ic-roZ" secondAttribute="top" id="B5M-KD-6MZ"/>
-                            <constraint firstItem="RgU-Qs-12h" firstAttribute="trailing" secondItem="yvq-ic-roZ" secondAttribute="trailing" id="Iik-x7-FA7"/>
-                            <constraint firstItem="RgU-Qs-12h" firstAttribute="bottom" secondItem="yvq-ic-roZ" secondAttribute="bottom" id="YYc-As-z8w"/>
+                            <constraint firstItem="RgU-Qs-12h" firstAttribute="leading" secondItem="hMr-tB-X2z" secondAttribute="leading" id="0Xc-kY-qOZ"/>
+                            <constraint firstItem="RgU-Qs-12h" firstAttribute="top" secondItem="hMr-tB-X2z" secondAttribute="top" id="B5M-KD-6MZ"/>
+                            <constraint firstItem="RgU-Qs-12h" firstAttribute="trailing" secondItem="hMr-tB-X2z" secondAttribute="trailing" id="Iik-x7-FA7"/>
+                            <constraint firstItem="RgU-Qs-12h" firstAttribute="bottom" secondItem="hMr-tB-X2z" secondAttribute="bottom" id="YYc-As-z8w"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yvq-ic-roZ"/>
+                        <viewLayoutGuide key="safeArea" id="hMr-tB-X2z"/>
                     </view>
                     <navigationItem key="navigationItem" title="รีวิวสินค้า" id="gah-P3-PlD">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="zwf-IT-uE1">
@@ -1200,12 +1200,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="l6e-7N-io3" firstAttribute="leading" secondItem="VOy-7o-ULB" secondAttribute="leading" id="5Zn-HX-Ydp"/>
-                            <constraint firstItem="VOy-7o-ULB" firstAttribute="bottom" secondItem="l6e-7N-io3" secondAttribute="bottom" id="Lwf-Yu-Fvz"/>
-                            <constraint firstItem="VOy-7o-ULB" firstAttribute="top" secondItem="l6e-7N-io3" secondAttribute="top" id="MEl-EF-Z01"/>
-                            <constraint firstItem="VOy-7o-ULB" firstAttribute="trailing" secondItem="l6e-7N-io3" secondAttribute="trailing" id="fJV-D1-fzW"/>
+                            <constraint firstItem="l6e-7N-io3" firstAttribute="leading" secondItem="aD8-0i-ckO" secondAttribute="leading" id="5Zn-HX-Ydp"/>
+                            <constraint firstItem="aD8-0i-ckO" firstAttribute="bottom" secondItem="l6e-7N-io3" secondAttribute="bottom" id="Lwf-Yu-Fvz"/>
+                            <constraint firstItem="aD8-0i-ckO" firstAttribute="top" secondItem="l6e-7N-io3" secondAttribute="top" id="MEl-EF-Z01"/>
+                            <constraint firstItem="aD8-0i-ckO" firstAttribute="trailing" secondItem="l6e-7N-io3" secondAttribute="trailing" id="fJV-D1-fzW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VOy-7o-ULB"/>
+                        <viewLayoutGuide key="safeArea" id="aD8-0i-ckO"/>
                     </view>
                     <navigationItem key="navigationItem" title="สินค้า" id="ZMc-DY-oy8">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Hgz-YN-wlt">
@@ -1278,6 +1278,6 @@
         <image name="review" width="14" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cjp-vg-JOF"/>
+        <segue reference="2hv-7Z-7iA"/>
     </inferredMetricsTieBreakers>
 </document>
