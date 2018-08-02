@@ -80,7 +80,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         let photo = ProductImageView.image
         let description = productDescription.text
         
-        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, review: "0", description: description!, ratings: nil)
+        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, description: description!, ratings: nil)
     }
     
     
@@ -92,7 +92,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
             ProductImageView.image = product.photo
             productName.text = product.name
             productPrice.text = product.price
-            productDescription.text = product.description
+            productDescription.text = product.productDescription
             ratingL = product.rating.like
             ratingF = product.rating.fair
             ratingS = product.rating.sad

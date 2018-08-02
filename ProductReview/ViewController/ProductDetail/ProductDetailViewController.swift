@@ -26,11 +26,11 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
             productImageView.image = product.photo
             productNameLabel.text = product.name
             productPriceLabel.text = "\(product.price) ฿"
-            productDescriptionTextView.text = product.description
+            productDescriptionTextView.text = product.productDescription
             descriptionHeadLabel.text = "รายละเอียดสินค้า"
-            productLikeRating.text = "\(product.rating.like)"
-            productFairRating.text = "\(product.rating.fair)"
-            productBadRating.text = "\(product.rating.sad)"
+            productLikeRating.text = "\(product.ratingL)"
+            productFairRating.text = "\(product.ratingF)"
+            productBadRating.text = "\(product.ratingS)"
         }
         // Do any additional setup after loading the view.
     }

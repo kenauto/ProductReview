@@ -34,6 +34,7 @@ class ProductCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigationBar()
+        self.collectionView?.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,7 +113,7 @@ class ProductCollectionViewController: UICollectionViewController {
             cell.priceLabel.text = "\(product.price) ฿"
             cell.emoticonImageView.image = product.ratingEmoticon
             cell.ratingLabel.text = "\(product.highestRating)"
-            cell.reviewLabel.text = "\(product.review)"
+            cell.reviewLabel.text = "\(product.reviews?.count ?? 0) รีวิว"
             return cell
         }
         
@@ -201,9 +202,9 @@ class ProductCollectionViewController: UICollectionViewController {
         let ratingData3:ReviewData = ReviewData.init(name: "kenny", rating: ReviewData.ratingStatus.Like, date: "now", description: "good")
         let ratingDatas: [ReviewData] = []
         
-        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, review: "5 รีวิว", description: description1,ratings: ratingDatas)
-        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, review: "9 รีวิว", description: description1,ratings: ratingDatas)
-        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, review: "", description: description1,ratings: ratingDatas)
+        let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180", photo: photo1, ratingS: 0, ratingF :0, ratingL:60, description: description1,ratings: ratingDatas)
+        let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200", photo: photo2, ratingS: 0, ratingF :48, ratingL:0, description: description1,ratings: ratingDatas)
+        let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, description: description1,ratings: ratingDatas)
         let ratingData4:ReviewData = ReviewData.init(name: "kennie", rating: ReviewData.ratingStatus.Like, date: "now", description: "gooddddd")
         product1.addReview(review: ratingData4)
         product1.addReview(review: ratingData1)

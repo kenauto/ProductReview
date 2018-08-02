@@ -34,7 +34,7 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
             productName.text = product.name
             productPrice.text = "\(product.price) ฿"
             productDescriptionHead.text = "รายละเอียดสินค้า"
-            productDescription.text = product.description
+            productDescription.text = product.productDescription
         }
         // Do any additional setup after loading the view.
     }
