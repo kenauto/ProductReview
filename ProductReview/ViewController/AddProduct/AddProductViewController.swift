@@ -91,8 +91,6 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         super.viewDidLoad()
         productDescription.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        productDescription.font = UIFont(name: "SukhumvitSet-Text", size: 17.0)!
-        productDescription.setBottomBorderWithColor(color: UIColor.darkGray, height: 2)
         if let product = product{
             ProductImageView.image = product.photo
             productName.text = product.name
@@ -106,6 +104,9 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
             ratingS = product.rating.sad
             
         }
+        
+        productDescription.font = UIFont(name: "SukhumvitSet-Text", size: 17.0)!
+        productDescription.setBottomBorderWithColor(color: UIColor.darkGray, height: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,7 +115,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        textView.setBottomBorderWithColor(color: UIColor.darkGray, height: 2)
+        textView.setBottomBorderWithColor(color: UIColor.darkGray, height: 1)
     }
 }
 

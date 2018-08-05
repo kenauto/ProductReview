@@ -63,9 +63,16 @@
                                                 <rect key="frame" x="1" y="0.0" width="375" height="265"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="kLA-oe-N9C" appends="YES" id="m6b-YU-Q2G"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-BC-9It" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="16" y="273" width="343" height="50"/>
+                                                <rect key="frame" x="16.5" y="273" width="343" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="Ltv-i7-n14"/>
+                                                    <constraint firstAttribute="width" constant="343" id="SIV-ms-5gU"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -84,7 +91,7 @@
                                                         <color key="value" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                         <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,7 +102,11 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-hg-yCW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="16" y="401" width="343" height="51"/>
+                                                <rect key="frame" x="16" y="408" width="343" height="50.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="QnC-SP-kaX"/>
+                                                    <constraint firstAttribute="width" constant="343" id="jlk-aQ-dd5"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -114,7 +125,7 @@
                                                         <color key="value" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                        <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                         <color key="value" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -125,16 +136,20 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-GR-JHF">
-                                                <rect key="frame" x="63" y="468" width="250" height="48"/>
+                                                <rect key="frame" x="63" y="539" width="250" height="48"/>
                                                 <state key="normal" title="addButton" image="addButton"/>
+                                                <connections>
+                                                    <segue destination="0Ut-uO-NFH" kind="unwind" unwindAction="unwindToProductListWithSender:" id="xrn-Ov-hoz"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ky-5P-6FL">
-                                                <rect key="frame" x="150" y="476" width="76" height="32"/>
+                                                <rect key="frame" x="150" y="547" width="76" height="32"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-KS-Ikg" customClass="JVFloatLabeledTextView">
-                                                <rect key="frame" x="16" y="342" width="343" height="51"/>
+                                                <rect key="frame" x="16" y="343" width="343" height="57"/>
+                                                <color key="tintColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51" id="Dnb-zs-WVZ"/>
                                                 </constraints>
@@ -151,10 +166,10 @@
                                             <constraint firstAttribute="trailing" secondItem="4b8-KS-Ikg" secondAttribute="trailing" constant="16" id="5s6-jV-Cgp"/>
                                             <constraint firstItem="bNT-WH-14E" firstAttribute="top" secondItem="JPm-nV-RYm" secondAttribute="bottom" constant="20" id="6qe-zd-VSj"/>
                                             <constraint firstItem="4ky-5P-6FL" firstAttribute="centerX" secondItem="HXW-GR-JHF" secondAttribute="centerX" id="Cc5-Ly-vP4"/>
-                                            <constraint firstItem="HXW-GR-JHF" firstAttribute="top" secondItem="yOv-hg-yCW" secondAttribute="bottom" constant="16" id="E9m-nP-1Uw"/>
+                                            <constraint firstItem="HXW-GR-JHF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yOv-hg-yCW" secondAttribute="bottom" constant="16" id="E9m-nP-1Uw"/>
                                             <constraint firstAttribute="trailing" secondItem="HXW-GR-JHF" secondAttribute="trailing" constant="62" id="EQF-Qb-jBz"/>
                                             <constraint firstItem="bNT-WH-14E" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="F6e-GI-eIG"/>
-                                            <constraint firstAttribute="bottom" secondItem="HXW-GR-JHF" secondAttribute="bottom" constant="87" id="Qs0-or-zcP"/>
+                                            <constraint firstAttribute="bottom" secondItem="HXW-GR-JHF" secondAttribute="bottom" constant="16" id="Qs0-or-zcP"/>
                                             <constraint firstItem="4b8-KS-Ikg" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="16" id="RZp-O4-Ei0"/>
                                             <constraint firstItem="4b8-KS-Ikg" firstAttribute="top" secondItem="Ti2-BC-9It" secondAttribute="bottom" constant="19" id="SPl-Cz-Lu3"/>
                                             <constraint firstAttribute="trailing" secondItem="buI-0d-uv5" secondAttribute="trailing" id="WMh-ZA-8Z1"/>
@@ -210,6 +225,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="0Ut-uO-NFH" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="kLA-oe-N9C">
                     <connections>
                         <action selector="selectPhotoFromLibrary:" destination="BYZ-38-t0r" id="jbF-5q-WfX"/>
