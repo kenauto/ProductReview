@@ -27,7 +27,7 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         likeButton.setBackgroundImage(nil, for: .normal)
-        fairButton.setBackgroundImage(nil, for: .normal)
+        fairButton.setBackgroundImage(UIImage(named: "emoticonFair"), for: .normal)
         sadButton.setBackgroundImage(nil, for: .normal)
         if let product = product {
             productImage.image = product.photo

@@ -506,21 +506,21 @@
                                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonSad" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-As-Ecu">
+                                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonSad" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-As-Ecu">
                                                 <rect key="frame" x="230" y="502" width="28" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="7ah-DP-B2x"/>
                                                     <constraint firstAttribute="width" constant="28" id="p8c-RT-jgo"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonLike" translatesAutoresizingMaskIntoConstraints="NO" id="Mi6-7r-d4c">
+                                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonLike" translatesAutoresizingMaskIntoConstraints="NO" id="Mi6-7r-d4c">
                                                 <rect key="frame" x="117" y="501" width="28" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="c91-WV-aL0"/>
                                                     <constraint firstAttribute="height" constant="24" id="jqu-W2-TC0"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonFair" translatesAutoresizingMaskIntoConstraints="NO" id="DEl-yU-HUo">
+                                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticonFair" translatesAutoresizingMaskIntoConstraints="NO" id="DEl-yU-HUo">
                                                 <rect key="frame" x="173" y="501" width="28" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="IzG-8T-Wht"/>
@@ -549,7 +549,7 @@
                                                     <action selector="fairAction:" destination="A9d-3K-FX3" eventType="touchUpInside" id="rey-da-yL4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJN-5R-C7L">
+                                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJN-5R-C7L">
                                                 <rect key="frame" x="222" y="492" width="44" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="frj-JA-euC"/>
