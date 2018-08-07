@@ -8,34 +8,7 @@
 
 import UIKit
 
-class Product : NSObject, NSCoding {
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(price, forKey: PropertyKey.price)
-        aCoder.encode(photo, forKey: PropertyKey.photo)
-        aCoder.encode(rating, forKey: PropertyKey.rating)
-        aCoder.encode(highestRating, forKey: PropertyKey.highestRating)
-        aCoder.encode(ratingS, forKey: PropertyKey.ratingS)
-        aCoder.encode(ratingF, forKey: PropertyKey.ratingF)
-        aCoder.encode(ratingL, forKey: PropertyKey.ratingL)
-        aCoder.encode(ratingEmoticon, forKey: PropertyKey.ratingEmoticon)
-        aCoder.encode(productDescription, forKey: PropertyKey.productDescription)
-        aCoder.encode(reviews, forKey: PropertyKey.reviews)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String
-        let price = aDecoder.decodeObject(forKey: PropertyKey.price) as? String
-        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
-        let ratingS = aDecoder.decodeInteger(forKey: PropertyKey.ratingS)
-        let ratingF = aDecoder.decodeInteger(forKey: PropertyKey.ratingF)
-        let ratingL = aDecoder.decodeInteger(forKey: PropertyKey.ratingL)
-        let productDescription = aDecoder.decodeObject(forKey: PropertyKey.productDescription) as? String
-        let reviews = aDecoder.decodeObject(forKey: PropertyKey.reviews) as? [ReviewData]
-        self.init(name: name!, price: price!, photo: photo, ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, description: productDescription!, ratings: reviews)
-    }
-    
-    
+class Product {
     //MARK: Property
     var name: String
     var price: String
