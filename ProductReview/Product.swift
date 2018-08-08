@@ -21,19 +21,6 @@ class Product {
     var ratingEmoticon: UIImage?
     var productDescription: String
     var reviews: [ReviewData]?
-    struct PropertyKey{
-        static let name = "name"
-        static let price = "price"
-        static let photo = "photo"
-        static let rating = "rating"
-        static let highestRating = "highestRating"
-        static let ratingS = "ratingS"
-        static let ratingF = "ratingF"
-        static let ratingL = "ratingL"
-        static let ratingEmoticon = "ratingEmoticon"
-        static let productDescription = "productDescription"
-        static let reviews = "reviews"
-    }
     
     init(name:String, price:String, photo:UIImage?, ratingS: Int, ratingF: Int, ratingL: Int, description: String,ratings: [ReviewData]?){
         self.name = name
@@ -45,11 +32,15 @@ class Product {
         self.rating = Rating(sad: ratingS, fair: ratingF, like: ratingL)
         self.productDescription = description
         self.reviews = ratings
-        if ratingL > ratingF && ratingL > ratingS{
+        if ratingL == 0 && ratingF == 0 && ratingS == 0{
+            self.ratingEmoticon = #imageLiteral(resourceName: "emoticonFair")
+            highestRating = ratingF
+        }
+        else if ratingL >= ratingF && ratingL >= ratingS{
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonLike")
             highestRating = ratingL
         }
-        else if ratingF > ratingL && ratingF > ratingS {
+        else if ratingF >= ratingL && ratingF >= ratingS {
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonFair")
             highestRating = ratingF
         }
@@ -71,11 +62,15 @@ class Product {
         checkHighest()
     }
     func checkHighest(){
-        if ratingL > ratingF && ratingL > ratingS{
+        if ratingL == 0 && ratingF == 0 && ratingS == 0{
+            self.ratingEmoticon = #imageLiteral(resourceName: "emoticonFair")
+            highestRating = ratingF
+        }
+        else if ratingL >= ratingF && ratingL >= ratingS{
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonLike")
             highestRating = ratingL
         }
-        else if ratingF > ratingL && ratingF > ratingS {
+        else if ratingF >= ratingL && ratingF >= ratingS {
             self.ratingEmoticon = #imageLiteral(resourceName: "emoticonFair")
             highestRating = ratingF
         }

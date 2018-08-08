@@ -22,8 +22,16 @@ class ProductCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
 
-        loadSampleProduct()
+        for pd in CoreDataManager.fetchProductData(){
+            Products.append(pd.values)
+        }
+        if Products.count == 0{
+            loadSampleProduct()
+            CoreDataManager.saveProductToPersistData(datas: Products)
+        }
+        Products = sortProduct(products: Products)
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +42,7 @@ class ProductCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigationBar()
+        Products = sortProduct(products: Products)
         self.collectionView?.reloadData()
     }
     
@@ -165,21 +174,23 @@ class ProductCollectionViewController: UICollectionViewController {
     */
     //MARK: Actions
     @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? AddProductViewController, let product = sourceViewController.product {
+        if let sourceViewController = sender.source as? AddProductViewController, let product = sourceViewController.product, let deleteState = sourceViewController.deleteState {
             
             if let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first{
-            if selectedIndexPath.item != 0{
-                // Update an existing meal.
-                Products[selectedIndexPath.item-1] = product
-                collectionView?.reloadItems(at: [selectedIndexPath])
-            }
-            else {
-                // Add a new meal.
-                let newIndexPath = IndexPath(row: Products.count+1, section: 0)
-                
-                Products.append(product)
-                collectionView?.insertItems(at: [newIndexPath])
-            }
+                if deleteState{
+                    print("delete item at \(Products[selectedIndexPath.item-1].name)")
+                    Products.remove(at: (selectedIndexPath.item-1))
+                }
+                else if selectedIndexPath.item != 0{
+                    Products[selectedIndexPath.item-1] = product
+                    collectionView?.reloadItems(at: [selectedIndexPath])
+                }
+                else {
+                    let newIndexPath = IndexPath(row: Products.count+1, section: 0)
+                    
+                    Products.append(product)
+                    collectionView?.insertItems(at: [newIndexPath])
+                }
             }
         }
         if let sourceViewController = sender.source as? AddReviewViewController, let product = sourceViewController.product{
@@ -187,6 +198,7 @@ class ProductCollectionViewController: UICollectionViewController {
             Products[(selectedIndexPath?.item)!-1] = product
             
         }
+        CoreDataManager.saveProductToPersistData(datas: Products)
     }
     
     //MARK: Private function
@@ -197,23 +209,22 @@ class ProductCollectionViewController: UICollectionViewController {
         let description1 = """
                             กาแฟอาราบิก้าคั่วกลาง แบบเมล็ด ขนาด 250 กรัม รสชาติกลมกล่อม กลิ่นหอม ยังคงความเป็นผลไม้และความสดชื่น เงื่อนไขการสั่งสินค้า/ คำแนะนำ สินค้าซื้อแล้วไม่สามารถปรับ เปลี่ยน หรือคืนได้ ยกเว้น สินค้าชำรุด/เสียหาย ไม่เป็นไปตามรูปที่แสดงเท่านั้น จัดจำหน่ายและจัดส่งโดย Abonzo Coffee. สอบถามข้อมูลเพิ่มเติมเกี่ยวกันสินค้า ติดต่อ คุณภัทรชัย 091-070-7272
                             """
-        let ratingData1:ReviewData = ReviewData.init(name: "kenny", rating: ReviewData.ratingStatus.Like, date: "now", description: "good")
-        let ratingData2:ReviewData = ReviewData.init(name: "kenny", rating: ReviewData.ratingStatus.Like, date: "now", description: "good")
-        let ratingData3:ReviewData = ReviewData.init(name: "kenny", rating: ReviewData.ratingStatus.Like, date: "now", description: "good")
+
         let ratingDatas: [ReviewData] = []
         
         let product1 = Product(name: "กาแฟ Abonzo คั่วกลาง", price: "180", photo: photo1, ratingS: 0, ratingF :0, ratingL:0, description: description1,ratings: ratingDatas)
         let product2 = Product(name: "กาแฟอาราบิก้าคั่วอ่อน", price: "200", photo: photo2, ratingS: 0, ratingF :0, ratingL:0, description: description1,ratings: ratingDatas)
         let product3 = Product(name: "กาแฟอาราบิก้าคั่วเข้ม", price: "200", photo: photo3, ratingS: 0, ratingF :0, ratingL:0, description: description1,ratings: ratingDatas)
-        let ratingData4:ReviewData = ReviewData.init(name: "kennie", rating: ReviewData.ratingStatus.Like, date: "now", description: "gooddddd")
-        product1.addReview(review: ratingData4)
-        product1.addReview(review: ratingData1)
-        product1.addReview(review: ratingData4)
-        product1.addReview(review: ratingData1)
-        product1.addReview(review: ratingData4)
-        product1.addReview(review: ratingData1)
         Products += [product1,product2,product3]
     }
-    
+    func sortProduct(products:[Product])->[Product]{
+        var sortedProducts: [Product] = products
+        sortedProducts.sort {
+            
+            ($0.reviews?.count)! > ($1.reviews?.count)!
+            
+        }
+        return sortedProducts
+    }
     
 }

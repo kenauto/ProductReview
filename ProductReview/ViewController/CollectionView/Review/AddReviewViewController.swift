@@ -24,6 +24,10 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
     @IBOutlet weak var addReviewButton: UIButton!
     private var state: ReviewData.ratingStatus = .Fair
     var product: Product?
+    let date = Date()
+    let formatter = DateFormatter()
+    var dateResult :String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         likeButton.setBackgroundImage(nil, for: .normal)
@@ -36,7 +40,12 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
             productDescriptionHead.text = "รายละเอียดสินค้า"
             productDescription.text = product.productDescription
         }
+        formatter.dateFormat = "dd MM yy"
+        
+        dateResult = formatter.string(from: date)
         // Do any additional setup after loading the view.
+        changeDate()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +53,46 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
         // Dispose of any resources that can be recreated.
     }
     
+    func changeDate(){
+        var dmy = dateResult.components(separatedBy: " ")
+        var dmyChanged: [String] = []
+        
+        dmyChanged.append(dmy[0].replacingOccurrences(of: "0", with: ""))
+        dmyChanged.append(dmy[1].replacingOccurrences(of: "0", with: ""))
+        let m: Int = Int(dmy[1])!
+        switch m {
+        case 1:
+            dmyChanged[1] = "ม.ค."
+        case 2:
+            dmyChanged[1] = "ก.พ."
+        case 3:
+            dmyChanged[1] = "มี.ค."
+        case 4:
+            dmyChanged[1] = "เม.ย."
+        case 5:
+            dmyChanged[1] = "พ.ค."
+        case 6:
+            dmyChanged[1] = "มิ.ย."
+        case 7:
+            dmyChanged[1] = "ก.ค."
+        case 8:
+            dmyChanged[1] = "ส.ค."
+        case 9:
+            dmyChanged[1] = "ก.ย."
+        case 10:
+            dmyChanged[1] = "ต.ค."
+        case 11:
+            dmyChanged[1] = "พ.ย."
+        case 12:
+            dmyChanged[1] = "ธ.ค."
+        default:
+            dmyChanged[1] = ""
+        }
+        var y: Int = Int(dmy[2])!
+        y = y + 43
+        y = y % 100
+        dateResult = dmyChanged[0]+" "+dmyChanged[1]+" \(y)"
+    }
 
     //MARK: Actions
     @IBAction func likeAction(_ sender: Any) {
@@ -86,7 +135,7 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
         }
         let name = reviewName.text
         let description = reviewDescription.text
-        product?.addReview(review: ReviewData(name: name!, rating: state, date: "", description: description!))
+        product?.addReview(review: ReviewData(name: name!, rating: state.rawValue, date: dateResult, description: description!))
     }
     
 

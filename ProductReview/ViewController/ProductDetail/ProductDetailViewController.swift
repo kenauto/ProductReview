@@ -33,6 +33,7 @@ class ProductDetailViewController: UIViewController, UINavigationControllerDeleg
             productBadRating.text = "\(product.ratingS)"
         }
         // Do any additional setup after loading the view.
+        UserDefaults.standard.set(product?.name, forKey: "SelectedProduct")
     }
 
     override func didReceiveMemoryWarning() {

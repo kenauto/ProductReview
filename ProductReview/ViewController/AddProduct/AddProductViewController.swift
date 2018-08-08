@@ -11,6 +11,7 @@ import SkyFloatingLabelTextField
 import JVFloatLabeledTextField
 import os.log
 
+
 class AddProductViewController: UIViewController,UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate {
     
     
@@ -22,11 +23,14 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     @IBOutlet weak var productPrice: SkyFloatingLabelTextField!
 //    @IBOutlet weak var productDescription: UITextView!
     @IBOutlet weak var productDescription: JVFloatLabeledTextView!
+    @IBOutlet weak var deleteButtonItem: UIBarButtonItem!
     
     var product: Product?
     var ratingS = 0
     var ratingF = 0
     var ratingL = 0
+    var deleteState: Bool? = false
+    var reviews: [ReviewData]? = []
     
     //MARK: Actions
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -71,18 +75,20 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         super.prepare(for: segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIButton, button === addButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
+        if let button = sender as? UIButton, button === addButton {
+            os_log("The save button was pressed", log: OSLog.default, type: .debug)
+        }
+        else{
+            deleteState = true
         }
         
         let name = productName.text
         let price = "\(productPrice.text ?? "0")"
         //        let description = productDescription.text
-        let photo = ProductImageView.image
+        let photo = ProductImageView.image ?? #imageLiteral(resourceName: "defaultphoto_2x")
         let description = productDescription.text
-        
-        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, description: description!, ratings: nil)
+
+        product = Product(name: name!, price: price, photo: photo,  ratingS: ratingS, ratingF: ratingF, ratingL: ratingL, description: description!, ratings: reviews)
     }
     
     
@@ -95,14 +101,15 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
             ProductImageView.image = product.photo
             productName.text = product.name
             productPrice.text = product.price
-            
+           reviews = product.reviews
 //            productDescription.float
 //
             productDescription.text = product.productDescription
             ratingL = product.rating.like
             ratingF = product.rating.fair
             ratingS = product.rating.sad
-            
+        } else{
+            deleteButtonItem.isEnabled = false
         }
         
         productDescription.font = UIFont(name: "SukhumvitSet-Text", size: 17.0)!

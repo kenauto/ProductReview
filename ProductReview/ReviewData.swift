@@ -14,9 +14,9 @@ class ReviewData {
     var date: String
     var description: String
     
-    init(name: String,rating: ratingStatus,date: String, description: String){
+    init(name: String,rating: String,date: String, description: String){
         self.name = name
-        self.rating = rating
+        self.rating = ratingStatus(rawValue: rating)!
         self.date = date
         self.description = description
     }

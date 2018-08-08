@@ -35,6 +35,11 @@
 		F4E2D00120EF56D700F3068B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E2D00020EF56D700F3068B /* Assets.xcassets */; };
 		F4E2D00420EF56D700F3068B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E2D00220EF56D700F3068B /* LaunchScreen.storyboard */; };
 		F4E2D00F20EF56D700F3068B /* ProductReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2D00E20EF56D700F3068B /* ProductReviewTests.swift */; };
+		F4F258552119782500E2F2DE /* ReviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F258512119782500E2F2DE /* ReviewEntity+CoreDataClass.swift */; };
+		F4F258562119782500E2F2DE /* ProductEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F258522119782500E2F2DE /* ProductEntity+CoreDataClass.swift */; };
+		F4F258572119782500E2F2DE /* ReviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F258532119782500E2F2DE /* ReviewEntity+CoreDataProperties.swift */; };
+		F4F258582119782500E2F2DE /* ProductEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F258542119782500E2F2DE /* ProductEntity+CoreDataProperties.swift */; };
+		F4F2587B21198B3700E2F2DE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2587A21198B3700E2F2DE /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,11 @@
 		F4E2D00A20EF56D700F3068B /* ProductReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E2D00E20EF56D700F3068B /* ProductReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewTests.swift; sourceTree = "<group>"; };
 		F4E2D01020EF56D700F3068B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F258512119782500E2F2DE /* ReviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F4F258522119782500E2F2DE /* ProductEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F4F258532119782500E2F2DE /* ReviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4F258542119782500E2F2DE /* ProductEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4F2587A21198B3700E2F2DE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +168,10 @@
 		F40CB04320F364FE00D81869 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F4F258522119782500E2F2DE /* ProductEntity+CoreDataClass.swift */,
+				F4F258542119782500E2F2DE /* ProductEntity+CoreDataProperties.swift */,
+				F4F258512119782500E2F2DE /* ReviewEntity+CoreDataClass.swift */,
+				F4F258532119782500E2F2DE /* ReviewEntity+CoreDataProperties.swift */,
 				F4DF244F20F073D2009C188B /* CollectionView */,
 				F40CB04620F3652C00D81869 /* ProductDetail */,
 				F40CB04420F3650B00D81869 /* AddProduct */,
@@ -244,6 +258,7 @@
 				F40CB04320F364FE00D81869 /* ViewController */,
 				F407043320EF784F00063CD7 /* Product.swift */,
 				F451472720F8AA4C001D11BE /* ReviewData.swift */,
+				F4F2587A21198B3700E2F2DE /* CoreDataManager.swift */,
 				F4E2CFFD20EF56D500F3068B /* Main.storyboard */,
 				F4E2D00020EF56D700F3068B /* Assets.xcassets */,
 				F4E2D00220EF56D700F3068B /* LaunchScreen.storyboard */,
@@ -451,15 +466,20 @@
 				F4D1E0FC210E0FEE00DCD919 /* AddReviewViewController.swift in Sources */,
 				F4E2CFFA20EF56D500F3068B /* AppDelegate.swift in Sources */,
 				F4DF244E20F069AA009C188B /* AddProductCollectionViewCell.swift in Sources */,
+				F4F258572119782500E2F2DE /* ReviewEntity+CoreDataProperties.swift in Sources */,
 				F4DF244C20F05A7F009C188B /* Extensions.swift in Sources */,
 				F40CB04820F36B1E00D81869 /* ProductDetailViewController.swift in Sources */,
 				F43B31AE2112FE1000BF4180 /* UITextView+extension.swift in Sources */,
+				F4F2587B21198B3700E2F2DE /* CoreDataManager.swift in Sources */,
 				F451473620FC4AF0001D11BE /* ReviewCollectionReusableView.swift in Sources */,
+				F4F258552119782500E2F2DE /* ReviewEntity+CoreDataClass.swift in Sources */,
 				F451472820F8AA4C001D11BE /* ReviewData.swift in Sources */,
 				F451472D20F8B231001D11BE /* RatingCollectionViewCell.swift in Sources */,
+				F4F258582119782500E2F2DE /* ProductEntity+CoreDataProperties.swift in Sources */,
 				F407043620EF7CA500063CD7 /* ProductCollectionViewCell.swift in Sources */,
 				F451473420FA615D001D11BE /* ReviewCollectionViewCell.swift in Sources */,
 				F43B31A82112AF5900BF4180 /* product.xcdatamodeld in Sources */,
+				F4F258562119782500E2F2DE /* ProductEntity+CoreDataClass.swift in Sources */,
 				F451473820FC5483001D11BE /* AddReviewCollectionViewCell.swift in Sources */,
 				F407043420EF784F00063CD7 /* Product.swift in Sources */,
 			);
