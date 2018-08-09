@@ -79,7 +79,7 @@
 		F4D1E0FB210E0FEE00DCD919 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		F4DF244B20F05A7F009C188B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F4DF244D20F069AA009C188B /* AddProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductCollectionViewCell.swift; sourceTree = "<group>"; };
-		F4E2CFF620EF56D500F3068B /* ProductReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E2CFF620EF56D500F3068B /* Pisit-ProductReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pisit-ProductReview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E2CFF920EF56D500F3068B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E2CFFB20EF56D500F3068B /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		F4E2CFFE20EF56D500F3068B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		F4E2CFF720EF56D500F3068B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4E2CFF620EF56D500F3068B /* ProductReview.app */,
+				F4E2CFF620EF56D500F3068B /* Pisit-ProductReview.app */,
 				F4E2D00A20EF56D700F3068B /* ProductReviewTests.xctest */,
 			);
 			name = Products;
@@ -297,7 +297,7 @@
 			);
 			name = ProductReview;
 			productName = ProductReview;
-			productReference = F4E2CFF620EF56D500F3068B /* ProductReview.app */;
+			productReference = F4E2CFF620EF56D500F3068B /* Pisit-ProductReview.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F4E2D00920EF56D700F3068B /* ProductReviewTests */ = {
@@ -657,8 +657,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.ProductReview;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f32f8d75-22b3-488d-ac77-4199fab7e72f";
+				PRODUCT_NAME = "Pisit-$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "84a07095-4239-46ce-979f-dfc40798b3f7";
 				PROVISIONING_PROFILE_SPECIFIER = adhoc.ProductReview;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,8 +683,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.ProductReview;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f32f8d75-22b3-488d-ac77-4199fab7e72f";
+				PRODUCT_NAME = "Pisit-$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "84a07095-4239-46ce-979f-dfc40798b3f7";
 				PROVISIONING_PROFILE_SPECIFIER = adhoc.ProductReview;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
