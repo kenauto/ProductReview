@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 private let reuseIdentifier = "Cell"
 
@@ -16,14 +17,7 @@ class ProductCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-
         for pd in CoreDataManager.fetchProductData(){
             Products.append(pd.values)
         }
@@ -84,11 +78,6 @@ class ProductCollectionViewController: UICollectionViewController {
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
-//        if segue.identifier == "showDetail" {
-//            let productDetailViewController = segue.destination
-//            let selectedProductCell = sender
-//            let indexPath = Products[in]
-//        }
     }
     
 
@@ -140,63 +129,62 @@ class ProductCollectionViewController: UICollectionViewController {
             fatalError()
         }
     }
-    
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     //MARK: Actions
     @IBAction func unwindToProductList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AddProductViewController, let product = sourceViewController.product, let deleteState = sourceViewController.deleteState {
-            
             if let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first{
+                var msgConfig = SwiftMessages.defaultConfig
+                msgConfig.presentationStyle = .top
+                msgConfig.presentationContext = .window(windowLevel: UIWindowLevelNormal)
+                msgConfig.duration = .seconds(seconds: 2)
                 if deleteState{
-                    print("delete item at \(Products[selectedIndexPath.item-1].name)")
+                    let pdName = Products[selectedIndexPath.item-1].name
+                    print("delete item at \(pdName)")
+                    let deleteSuccess = MessageView.viewFromNib(layout: .cardView)
+                    deleteSuccess.configureTheme(.error)
+                    deleteSuccess.configureDropShadow()
+                    deleteSuccess.configureContent(title: "Delete", body: "Delete item name '\(pdName)'")
+                    deleteSuccess.button?.isHidden = true
+                    SwiftMessages.show(config: msgConfig, view: deleteSuccess)
                     Products.remove(at: (selectedIndexPath.item-1))
                 }
                 else if selectedIndexPath.item != 0{
                     Products[selectedIndexPath.item-1] = product
                     collectionView?.reloadItems(at: [selectedIndexPath])
+                    let editSuccess = MessageView.viewFromNib(layout: .cardView)
+                    editSuccess.configureTheme(.warning)
+                    editSuccess.configureDropShadow()
+                    editSuccess.configureContent(title: "Edit", body: "Edit item name '\(Products[selectedIndexPath.item-1].name)'")
+                    editSuccess.button?.isHidden = true
+                    SwiftMessages.show(config: msgConfig, view: editSuccess)
                 }
                 else {
                     let newIndexPath = IndexPath(row: Products.count+1, section: 0)
                     
                     Products.append(product)
                     collectionView?.insertItems(at: [newIndexPath])
+                    let addSuccess = MessageView.viewFromNib(layout: .cardView)
+                    addSuccess.configureTheme(.success)
+                    addSuccess.configureDropShadow()
+                    addSuccess.configureContent(title: "Add", body: "Add item name '\(product.name)'")
+                    addSuccess.button?.isHidden = true
+                    SwiftMessages.show(config: msgConfig, view: addSuccess)
                 }
             }
         }
         if let sourceViewController = sender.source as? AddReviewViewController, let product = sourceViewController.product{
             let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first
             Products[(selectedIndexPath?.item)!-1] = product
-            
+            let addReviewSuccess = MessageView.viewFromNib(layout: .cardView)
+            addReviewSuccess.configureTheme(.success)
+            addReviewSuccess.configureDropShadow()
+            addReviewSuccess.configureContent(title: "Add Review", body: "Add Review to item name '\(product.name)'")
+            addReviewSuccess.button?.isHidden = true
+            var msgConfig = SwiftMessages.defaultConfig
+            msgConfig.presentationStyle = .top
+            msgConfig.presentationContext = .window(windowLevel: UIWindowLevelNormal)
+            msgConfig.duration = .seconds(seconds: 2)
+            SwiftMessages.show(config: msgConfig, view: addReviewSuccess)
         }
         CoreDataManager.saveProductToPersistData(datas: Products)
     }

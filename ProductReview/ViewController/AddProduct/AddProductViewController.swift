@@ -25,6 +25,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     @IBOutlet weak var productDescription: JVFloatLabeledTextView!
     @IBOutlet weak var deleteButtonItem: UIBarButtonItem!
     
+    @IBOutlet weak var buttonName: UILabel!
     var product: Product?
     var ratingS = 0
     var ratingF = 0
@@ -108,6 +109,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
             ratingL = product.rating.like
             ratingF = product.rating.fair
             ratingS = product.rating.sad
+            buttonName.text = "แก้ไขสินค้า"
         } else{
             deleteButtonItem.isEnabled = false
         }
