@@ -12,6 +12,6 @@ class ReviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var reviewName: UILabel!
     @IBOutlet weak var reviewPicture: UIImageView!
     @IBOutlet weak var reviewDate: UILabel!
-    @IBOutlet weak var reviewDescription: UILabel!
     
+    @IBOutlet weak var reviewDescription: UITextView!
 }

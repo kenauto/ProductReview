@@ -100,6 +100,19 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-KS-Ikg" customClass="JVFloatLabeledTextView">
+                                                <rect key="frame" x="16" y="343" width="343" height="51"/>
+                                                <color key="tintColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51" id="Dnb-zs-WVZ"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รายละเอียดสินค้า"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-hg-yCW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="16" y="402" width="343" height="51"/>
                                                 <constraints>
@@ -151,19 +164,6 @@
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-KS-Ikg" customClass="JVFloatLabeledTextView">
-                                                <rect key="frame" x="16" y="343" width="343" height="51"/>
-                                                <color key="tintColor" red="0.094117647060000004" green="0.69803921570000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51" id="Dnb-zs-WVZ"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รายละเอียดสินค้า"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -337,12 +337,13 @@
                                             <color key="textColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wj-0y-7OX" userLabel="Review Description">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-uV-iF4">
                                             <rect key="frame" x="90" y="51" width="231" height="66"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="17"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconExpiredDate" translatesAutoresizingMaskIntoConstraints="NO" id="j2b-JQ-eJy">
                                             <rect key="frame" x="225" y="21" width="15" height="14"/>
                                             <constraints>
@@ -355,18 +356,18 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="CEP-z9-91D" firstAttribute="top" secondItem="qWl-D2-v4K" secondAttribute="bottom" constant="10" id="2YM-4L-a80"/>
-                                    <constraint firstItem="4wj-0y-7OX" firstAttribute="leading" secondItem="CEP-z9-91D" secondAttribute="trailing" constant="23" id="3NB-c9-3ac"/>
+                                    <constraint firstItem="UfM-uV-iF4" firstAttribute="top" secondItem="ccl-vY-Gwx" secondAttribute="bottom" constant="11" id="5Pb-fW-66O"/>
                                     <constraint firstItem="CEP-z9-91D" firstAttribute="leading" secondItem="PJp-Wn-Qhp" secondAttribute="leadingMargin" constant="15" id="79m-7M-eVj"/>
                                     <constraint firstItem="qWl-D2-v4K" firstAttribute="leading" secondItem="PJp-Wn-Qhp" secondAttribute="leadingMargin" constant="16" id="8Da-jJ-tqL"/>
                                     <constraint firstItem="ccl-vY-Gwx" firstAttribute="leading" secondItem="j2b-JQ-eJy" secondAttribute="trailing" constant="8" id="9K4-Yr-m6K"/>
+                                    <constraint firstItem="UfM-uV-iF4" firstAttribute="leading" secondItem="CEP-z9-91D" secondAttribute="trailing" constant="23" id="Ab5-yY-KFL"/>
                                     <constraint firstItem="j2b-JQ-eJy" firstAttribute="centerY" secondItem="ccl-vY-Gwx" secondAttribute="centerY" id="J9L-Le-TVl"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="4wj-0y-7OX" secondAttribute="bottom" constant="4" id="JXS-ii-Nox"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="CEP-z9-91D" secondAttribute="bottom" constant="21" id="NeO-KJ-RwI"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="UfM-uV-iF4" secondAttribute="bottom" constant="4" id="U2I-2a-Ypp"/>
                                     <constraint firstItem="qWl-D2-v4K" firstAttribute="top" secondItem="PJp-Wn-Qhp" secondAttribute="topMargin" constant="2" id="hYy-Bj-2sn"/>
-                                    <constraint firstItem="4wj-0y-7OX" firstAttribute="top" secondItem="ccl-vY-Gwx" secondAttribute="bottom" constant="11" id="lBf-CA-3o7"/>
                                     <constraint firstAttribute="trailing" secondItem="ccl-vY-Gwx" secondAttribute="trailing" constant="30" id="nsX-zo-JjR"/>
                                     <constraint firstItem="ccl-vY-Gwx" firstAttribute="top" secondItem="PJp-Wn-Qhp" secondAttribute="top" constant="16" id="wEv-sE-Iqw"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="4wj-0y-7OX" secondAttribute="trailing" constant="14" id="yGu-w4-cCZ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="UfM-uV-iF4" secondAttribute="trailing" constant="14" id="xYZ-BF-YNa"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -375,7 +376,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="reviewDate" destination="ccl-vY-Gwx" id="cQc-zQ-17p"/>
-                                    <outlet property="reviewDescription" destination="4wj-0y-7OX" id="581-52-e2r"/>
+                                    <outlet property="reviewDescription" destination="UfM-uV-iF4" id="MAp-Jh-cYT"/>
                                     <outlet property="reviewName" destination="qWl-D2-v4K" id="x1U-eF-HTP"/>
                                     <outlet property="reviewPicture" destination="CEP-z9-91D" id="hIp-7O-nDa"/>
                                 </connections>
@@ -849,7 +850,6 @@
                                             <rect key="frame" x="8" y="146" width="91.5" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="ZV1-ad-gpe"/>
-                                                <constraint firstAttribute="width" constant="91.5" id="vTy-gl-V34"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="17"/>
                                             <color key="textColor" red="0.094117647058823528" green="0.69803921568627447" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
