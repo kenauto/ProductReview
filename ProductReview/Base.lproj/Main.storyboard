@@ -54,21 +54,20 @@
                                                 <rect key="frame" x="164" y="93" width="48" height="36"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ใส่รูปสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-WH-14E">
-                                                <rect key="frame" x="151.5" y="149" width="72" height="27"/>
+                                                <rect key="frame" x="152.5" y="149" width="71.5" height="27"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaE-cj-DMz">
-                                                <rect key="frame" x="1" y="0.0" width="375" height="265"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TaE-cj-DMz">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
                                                 <gestureRecognizers/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="kLA-oe-N9C" appends="YES" id="m6b-YU-Q2G"/>
                                                 </connections>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-BC-9It" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="16.5" y="273" width="343" height="51"/>
+                                                <rect key="frame" x="17" y="273" width="343" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="Ltv-i7-n14"/>
                                                     <constraint firstAttribute="width" constant="343" id="SIV-ms-5gU"/>
@@ -102,7 +101,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOv-hg-yCW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="16" y="408" width="343" height="50.5"/>
+                                                <rect key="frame" x="16" y="408" width="343" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="QnC-SP-kaX"/>
                                                     <constraint firstAttribute="width" constant="343" id="jlk-aQ-dd5"/>
@@ -135,13 +134,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-GR-JHF">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ifr-k4-tRJ">
                                                 <rect key="frame" x="63" y="539" width="250" height="48"/>
-                                                <state key="normal" backgroundImage="addButton"/>
-                                                <connections>
-                                                    <segue destination="0Ut-uO-NFH" kind="unwind" unwindAction="unwindToProductListWithSender:" id="xrn-Ov-hoz"/>
-                                                </connections>
-                                            </button>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-GR-JHF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="48"/>
+                                                        <state key="normal" backgroundImage="addButton"/>
+                                                        <connections>
+                                                            <segue destination="0Ut-uO-NFH" kind="unwind" unwindAction="unwindToProductListWithSender:" id="xrn-Ov-hoz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสินค้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ky-5P-6FL">
                                                 <rect key="frame" x="150" y="547" width="76" height="32"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
@@ -163,26 +167,33 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="yOv-hg-yCW" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="16" id="2uZ-BK-jBS"/>
                                             <constraint firstAttribute="trailing" secondItem="4b8-KS-Ikg" secondAttribute="trailing" constant="16" id="5s6-jV-Cgp"/>
                                             <constraint firstItem="bNT-WH-14E" firstAttribute="top" secondItem="JPm-nV-RYm" secondAttribute="bottom" constant="20" id="6qe-zd-VSj"/>
-                                            <constraint firstItem="4ky-5P-6FL" firstAttribute="centerX" secondItem="HXW-GR-JHF" secondAttribute="centerX" id="Cc5-Ly-vP4"/>
-                                            <constraint firstItem="HXW-GR-JHF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yOv-hg-yCW" secondAttribute="bottom" constant="16" id="E9m-nP-1Uw"/>
-                                            <constraint firstAttribute="trailing" secondItem="HXW-GR-JHF" secondAttribute="trailing" constant="62" id="EQF-Qb-jBz"/>
+                                            <constraint firstAttribute="trailing" secondItem="yOv-hg-yCW" secondAttribute="trailing" constant="16" id="8i8-2g-Rzf"/>
                                             <constraint firstItem="bNT-WH-14E" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="F6e-GI-eIG"/>
-                                            <constraint firstAttribute="bottom" secondItem="HXW-GR-JHF" secondAttribute="bottom" constant="16" id="Qs0-or-zcP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ifr-k4-tRJ" secondAttribute="bottom" constant="16" id="Las-oH-Rlk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ti2-BC-9It" secondAttribute="trailing" constant="15.5" id="NLa-Ng-rha"/>
                                             <constraint firstItem="4b8-KS-Ikg" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="16" id="RZp-O4-Ei0"/>
                                             <constraint firstItem="4b8-KS-Ikg" firstAttribute="top" secondItem="Ti2-BC-9It" secondAttribute="bottom" constant="19" id="SPl-Cz-Lu3"/>
                                             <constraint firstAttribute="trailing" secondItem="buI-0d-uv5" secondAttribute="trailing" id="WMh-ZA-8Z1"/>
+                                            <constraint firstItem="TaE-cj-DMz" firstAttribute="centerX" secondItem="buI-0d-uv5" secondAttribute="centerX" id="We9-Zu-WWF"/>
+                                            <constraint firstItem="Ifr-k4-tRJ" firstAttribute="top" secondItem="yOv-hg-yCW" secondAttribute="bottom" constant="80" id="YCa-7r-bfD"/>
                                             <constraint firstItem="Ti2-BC-9It" firstAttribute="top" secondItem="buI-0d-uv5" secondAttribute="bottom" constant="8" id="YRa-cP-mQW"/>
                                             <constraint firstItem="4b8-KS-Ikg" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="Z22-5w-8V6"/>
+                                            <constraint firstItem="Ti2-BC-9It" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="16.5" id="aOr-Mf-pRV"/>
                                             <constraint firstItem="yOv-hg-yCW" firstAttribute="top" secondItem="4b8-KS-Ikg" secondAttribute="bottom" constant="8" id="aZ5-Pz-JFt"/>
                                             <constraint firstItem="yOv-hg-yCW" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="aa0-Ci-stB"/>
-                                            <constraint firstItem="4ky-5P-6FL" firstAttribute="centerY" secondItem="HXW-GR-JHF" secondAttribute="centerY" id="cqx-JN-ndW"/>
+                                            <constraint firstItem="Ifr-k4-tRJ" firstAttribute="centerY" secondItem="4ky-5P-6FL" secondAttribute="centerY" id="ay6-q7-tWU"/>
+                                            <constraint firstItem="Ifr-k4-tRJ" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="c0h-6X-mWV"/>
                                             <constraint firstItem="JPm-nV-RYm" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="cr1-aw-p2u"/>
+                                            <constraint firstItem="TaE-cj-DMz" firstAttribute="centerY" secondItem="buI-0d-uv5" secondAttribute="centerY" id="dhq-Rx-cCM"/>
                                             <constraint firstItem="JPm-nV-RYm" firstAttribute="top" secondItem="vHb-ms-wb8" secondAttribute="top" constant="93" id="fnH-Ue-nfJ"/>
-                                            <constraint firstItem="Ti2-BC-9It" firstAttribute="centerX" secondItem="vHb-ms-wb8" secondAttribute="centerX" id="iXG-tP-1af"/>
                                             <constraint firstItem="buI-0d-uv5" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" id="lFP-ar-jPu"/>
-                                            <constraint firstItem="HXW-GR-JHF" firstAttribute="leading" secondItem="vHb-ms-wb8" secondAttribute="leading" constant="63" id="m0P-FQ-GCa"/>
+                                            <constraint firstItem="TaE-cj-DMz" firstAttribute="width" secondItem="buI-0d-uv5" secondAttribute="width" id="liU-84-Xdv"/>
+                                            <constraint firstItem="TaE-cj-DMz" firstAttribute="height" secondItem="buI-0d-uv5" secondAttribute="height" id="ouR-4X-Jw8"/>
+                                            <constraint firstItem="Ifr-k4-tRJ" firstAttribute="centerX" secondItem="4ky-5P-6FL" secondAttribute="centerX" id="ql1-Zl-DCF"/>
+                                            <constraint firstItem="Ifr-k4-tRJ" firstAttribute="top" secondItem="vHb-ms-wb8" secondAttribute="top" constant="539" id="reR-UR-rxJ"/>
                                             <constraint firstItem="buI-0d-uv5" firstAttribute="top" secondItem="vHb-ms-wb8" secondAttribute="top" id="yaI-aX-58t"/>
                                         </constraints>
                                     </view>

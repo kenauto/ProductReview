@@ -66,48 +66,4 @@ struct CoreDataManager  {
             print(error)
         }
     }
-    
-//    static func updateSelectedProductData(review: ReviewData) {
-//        guard let appDelegate =
-//            UIApplication.shared.delegate as? AppDelegate else {
-//                fatalError()
-//        }
-//
-//        let context = appDelegate.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<ProductEntity>(entityName: "Product")
-//        fetchRequest.predicate = NSPredicate(format: "productName = %@", UserDefaults.standard.value(forKey: "SelectedProduct") as! String)
-//        let entity = NSEntityDescription.entity(forEntityName: "ProductReviewer", in: context)
-//        let productReview = ReviewEntity(entity: entity!, insertInto: context)
-//        productReview.values = review
-//
-//        do {
-//            let fetchResult = try context.fetch(fetchRequest).first
-//            fetchResult?.addToReview(productReview)
-//            try context.save()
-//        } catch let error as NSError {
-//            fatalError("Could not fetch. \(error), \(error.userInfo)")
-//        }
-//    }
-//    
-//    static func updateSelectedProductData(product: Product) {
-//        guard let appDelegate =
-//            UIApplication.shared.delegate as? AppDelegate else {
-//                fatalError()
-//        }
-//        
-//        let context = appDelegate.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<ProductEntity>(entityName: "Product")
-//        fetchRequest.predicate = NSPredicate(format: "productName = %@", UserDefaults.standard.value(forKey: "SelectedProduct") as! String)
-//        
-//        do {
-//            let fetchResult = try context.fetch(fetchRequest).first
-//            fetchResult?.values = product
-//            try context.save()
-//        } catch let error as NSError {
-//            fatalError("Could not fetch. \(error), \(error.userInfo)")
-//        }
-//    }
-//    
-    
-    
 }

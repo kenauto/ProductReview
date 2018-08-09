@@ -113,7 +113,9 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         }
         
         productDescription.font = UIFont(name: "SukhumvitSet-Text", size: 17.0)!
-        productDescription.setBottomBorderWithColor(color: UIColor.darkGray, height: 1)
+        DispatchQueue.main.async {
+            self.productDescription.setBottomBorderWithColor(color: UIColor.darkGray, height: 1)
+        }
     }
     
     override func didReceiveMemoryWarning() {
