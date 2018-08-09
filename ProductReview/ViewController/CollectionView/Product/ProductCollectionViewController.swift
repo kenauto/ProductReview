@@ -140,7 +140,7 @@ class ProductCollectionViewController: UICollectionViewController {
                 if deleteState{
                     let pdName = Products[selectedIndexPath.item-1].name
                     print("delete item at \(pdName)")
-                    let deleteSuccess = MessageView.viewFromNib(layout: .cardView)
+                    let deleteSuccess = MessageView.viewFromNib(layout: .messageView)
                     deleteSuccess.configureTheme(.error)
                     deleteSuccess.configureDropShadow()
                     deleteSuccess.configureContent(title: "Delete", body: "Delete item name '\(pdName)'")
@@ -151,7 +151,7 @@ class ProductCollectionViewController: UICollectionViewController {
                 else if selectedIndexPath.item != 0{
                     Products[selectedIndexPath.item-1] = product
                     collectionView?.reloadItems(at: [selectedIndexPath])
-                    let editSuccess = MessageView.viewFromNib(layout: .cardView)
+                    let editSuccess = MessageView.viewFromNib(layout: .messageView)
                     editSuccess.configureTheme(.warning)
                     editSuccess.configureDropShadow()
                     editSuccess.configureContent(title: "Edit", body: "Edit item name '\(Products[selectedIndexPath.item-1].name)'")
@@ -163,7 +163,7 @@ class ProductCollectionViewController: UICollectionViewController {
                     
                     Products.append(product)
                     collectionView?.insertItems(at: [newIndexPath])
-                    let addSuccess = MessageView.viewFromNib(layout: .cardView)
+                    let addSuccess = MessageView.viewFromNib(layout: .messageView)
                     addSuccess.configureTheme(.success)
                     addSuccess.configureDropShadow()
                     addSuccess.configureContent(title: "Add", body: "Add item name '\(product.name)'")
@@ -175,7 +175,7 @@ class ProductCollectionViewController: UICollectionViewController {
         if let sourceViewController = sender.source as? AddReviewViewController, let product = sourceViewController.product{
             let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first
             Products[(selectedIndexPath?.item)!-1] = product
-            let addReviewSuccess = MessageView.viewFromNib(layout: .cardView)
+            let addReviewSuccess = MessageView.viewFromNib(layout: .messageView)
             addReviewSuccess.configureTheme(.success)
             addReviewSuccess.configureDropShadow()
             addReviewSuccess.configureContent(title: "Add Review", body: "Add Review to item name '\(product.name)'")

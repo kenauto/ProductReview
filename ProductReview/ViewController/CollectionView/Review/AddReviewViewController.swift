@@ -41,10 +41,13 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
             productDescription.text = product.productDescription
         }
         formatter.dateFormat = "dd MM yy"
+        reviewName.delegate = self
+        reviewDescription.delegate = self
         
         dateResult = formatter.string(from: date)
         // Do any additional setup after loading the view.
         changeDate()
+        updateSaveButtonState()
         
     }
 
@@ -138,5 +141,17 @@ class AddReviewViewController: UIViewController,UINavigationControllerDelegate,U
         product?.addReview(review: ReviewData(name: name!, rating: state.rawValue, date: dateResult, description: description!))
     }
     
-
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+    }
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let nameText = reviewName.text ?? ""
+        let descriptionText = reviewDescription.text
+        if nameText.isEmpty || (descriptionText?.isEmpty)!{
+            addReviewButton.isEnabled = false
+        } else {
+        addReviewButton.isEnabled = true
+        }
+    }
 }
