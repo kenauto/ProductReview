@@ -97,15 +97,14 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         productDescription.delegate = self
+        productName.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         if let product = product{
             ProductImageView.image = product.photo
             productName.text = product.name
             productPrice.text = product.price
-           reviews = product.reviews
-//            productDescription.float
-//
             productDescription.text = product.productDescription
+            reviews = product.reviews
             ratingL = product.rating.like
             ratingF = product.rating.fair
             ratingS = product.rating.sad
@@ -113,7 +112,7 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
         } else{
             deleteButtonItem.isEnabled = false
         }
-        
+        updateSaveButtonState()
         productDescription.font = UIFont(name: "SukhumvitSet-Text", size: 17.0)!
         DispatchQueue.main.async {
             self.productDescription.setBottomBorderWithColor(color: UIColor.darkGray, height: 1)
@@ -127,6 +126,14 @@ class AddProductViewController: UIViewController,UINavigationControllerDelegate,
     
     func textViewDidChange(_ textView: UITextView) {
         textView.setBottomBorderWithColor(color: UIColor.darkGray, height: 1)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+    }
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let nameText = productName.text ?? ""
+        addButton.isEnabled = !nameText.isEmpty
     }
 }
 
